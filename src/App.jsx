@@ -12,7 +12,7 @@ const AppContainer = styled.div`
 
 function App() {
   return (
-    <Router
+    <Router>
       <AppContainer>
         <Header />
         <Routes>
