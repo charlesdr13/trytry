@@ -5,6 +5,9 @@ export const typography = {
     font-family: 'Lubalin-Graph', sans-serif;
   `,
   AnonymousPro: css`
-    font-family: 'AnonymousPro', sans-serif;
+    font-family: 'Anonymous Pro', monospace; 
+  `,
+  Arimo: css`
+    font-family: 'Arimo', sans-serif;
   `
 } 

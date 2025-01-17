@@ -5,11 +5,3 @@
   font-style: normal;
   font-display: swap;
 } 
-
-@font-face {
-    font-family: 'AnonymousPro';
-    src: url('./AnonymousPro.ttf') format('truetype');
-    font-weight: normal, 700;
-    font-style: normal;
-    font-display: swap;
-  }

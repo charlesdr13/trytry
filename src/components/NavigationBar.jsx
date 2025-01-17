@@ -3,18 +3,19 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { QUERIES } from '../constants/breakpoints'
 import { typography } from '../styles/typography'
+import term2Logo from '../assets/images/term2Logo.png'
 
 const Nav = styled.nav`
   width: 100%;
-  height: 5.5rem;
+  height: 6.2rem;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #E5E5E5;
+  background-color: #000520;
   font-family: monospace;
   position: relative;
-  background: #D9D9D9;
+  background: #000520;
 
 
   @media ${QUERIES.tabletAndUp} {
@@ -24,18 +25,21 @@ const Nav = styled.nav`
 
 const Logo = styled(Link)`
   transform: translateX(3%);
-  font-size: 2rem;
-  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); // Subtle shadow
+  background-clip: text;
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
-  color: black;
   text-decoration: none;
   z-index: 2;
-
   ${typography.Lubalin}
-  
+
+  img {
+    height: 3rem;  // Adjust this value to match your desired logo size
+    width: auto;
+    vertical-align: middle;
+  }
 
   @media ${QUERIES.tabletAndUp} {
     margin-left: 2rem;
@@ -99,7 +103,7 @@ const MenuButton = styled.button`
 `
 
 const NavLink = styled(Link)`
-  color: black;
+  color: #8A8A8A;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
@@ -128,14 +132,23 @@ const NavLink = styled(Link)`
 `
 
 const BuyButton = styled(NavLink)`
-  background: #D9D9D9;
-  border: 1px solid #000;
+  background: #1E3B8D;
+  color: white !important;
+  border-top: 2px solid white;    // White top border
+  border-left: 2px solid white;   // White left border
+  border-bottom: 2px solid #0A2472; // Darker blue bottom border
+  border-right: 2px solid #0A2472;  // Darker blue right border
   padding: 0.5rem 1.5rem;
-  border-radius: 20px;
+  border-radius: 2px;
   min-width: 10rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+
   
   &:hover {
-    background: #f0f0f0;
+    background: #2a4dad;  // Slightly lighter blue on hover
+    transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -169,7 +182,9 @@ const NavigationBar = () => {
 
   return (
     <Nav>
-      <Logo to="/">  $TERM2</Logo>
+      <Logo to="/">
+        <img src={term2Logo} alt="TERM2 Logo" />
+      </Logo>
       <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? '✕' : '☰'}
       </MenuButton>
