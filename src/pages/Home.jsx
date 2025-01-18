@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { QUERIES } from '../constants/breakpoints'
 import HowToBuy from '../components/HowToBuy'
+import FAQ from '../components/FAQ'
+import Footer from '../components/Footer'
 import { typography } from '../styles/typography'
 import landingImageBack from '../assets/images/LandingPageBack.png'
 import landingImageFront from '../assets/images/LandingPageFront.png' 
@@ -16,16 +18,22 @@ import Button from '../components/Button'
 import flagDiv from '../assets/images/flagDivider.svg'
 import TokenomicsBG from '../assets/images/TokenomicsBG.svg'
 import plaqueBackground from '../assets/images/plaqueBG.svg'
+import blueDivider from '../assets/images/blueDiv.svg'
+import trumpHotelImage from '../assets/images/trumpHotel.png'
+
 
 const Container = styled.div`
   width: 100%;
   padding: 1rem;
   margin: 0 auto;
+  height: auto;
+  padding-bottom: 0;  // Add this line
   
 
   @media ${QUERIES.tabletAndUp} {
     max-width: 1200px;
     padding: 2rem;
+    padding-bottom: 0;
   }
 `
 const GradientBackground = styled.div`
@@ -643,6 +651,7 @@ const TokenomicsBackground = styled.div`
   background: transparent;
   z-index: 1;
   position: absolute;
+
   
   img {
     width: 110%;
@@ -651,7 +660,7 @@ const TokenomicsBackground = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: 130em;
+    height: 88rem;
     width: 121rem;
     margin-left: -25rem;
     margin-top: -17rem;
@@ -957,6 +966,82 @@ const PlagueBG4 = styled.div`
     margin-left: 32rem;
   }
 `
+const BlueDivider = styled.div`
+  width: 100%;
+  height: ${props => props.height || '50px'};
+  background: transparent;
+  position: relative;
+  left: 0%;
+  display: flex;
+  margin-top: 10rem;
+  z-index: 6;
+  
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    height: ${props => props.height || '60px'};
+    margin-left: -30rem;
+    margin-top: 11rem;
+    width: 150rem;
+  }
+`
+const GradientBackground3 = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;  // Adjust this value to control how far down the gradient goes
+  background: linear-gradient(180deg, #8EEAFF 0%, #FFFFFF 100%);
+  z-index: -0;
+  margin-bottom: -450rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    max-width: 100%;
+    padding: 2rem;
+    height: 100%;
+  }
+`
+const WhiteBackground = styled.div`
+  position: absolute;
+  top: 440rem;
+  left: 0;
+  width: 100%;
+  height: 60%;  // Adjust this value to control how far down the gradient goes
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+  z-index: 1;
+
+
+  @media ${QUERIES.tabletAndUp} {
+    max-width: 100%;
+    margin-bottom: -450rem;
+    padding: 2rem;
+    height: 90rem;
+  }
+`
+const TrumpHotelBackground = styled.div`
+  position: absolute;
+  top: 438rem;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: -450rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    height: auto;
+    width: 100%;
+  }
+`
 
 const Home = () => {
   return (
@@ -1051,12 +1136,20 @@ const Home = () => {
         <ButtonToken7 to="/tokenomics">100 MILLION (10%)</ButtonToken7>
         <ButtonToken8 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken8>
       </TokenomicsSection>
+      <BlueDivider>
+        <img src={blueDivider} alt="Image of Blue Divider" />
+      </BlueDivider>
+      <GradientBackground3 />
       <HowToBuy />
-
-      <section>
-        <h2>FAQ</h2>
-        <ImageContainer />
-      </section>
+      <FlagDivider style={{marginTop: '2rem'}}>
+        <img src={flagDiv} alt="Image of Flag Divider" />
+      </FlagDivider>
+      <WhiteBackground />
+      <TrumpHotelBackground>
+        <img src={trumpHotelImage} alt="Image of Trump Hotel" />
+      </TrumpHotelBackground>
+      <FAQ />
+      <Footer />
     </Container>
   )
 }
