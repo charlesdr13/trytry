@@ -1,8 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Home from './pages/Home'
 import Agents from './pages/Agents'
 import Header from './components/Header'
+import ScrollToTop from './components/ScrollToTop'
+import PageTransition from './components/PageTransition'
 
 const AppContainer = styled.div`
   background-color: #E5E5E5;
@@ -11,10 +14,21 @@ const AppContainer = styled.div`
 `
 
 function App() {
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  const handleNavigation = (path) => {
+    setIsNavigating(true);
+    setTimeout(() => {
+      setIsNavigating(false);
+    }, 800);
+  };
+
   return (
     <Router>
+      <ScrollToTop />
+      <PageTransition isNavigating={isNavigating} />
       <AppContainer>
-        <Header />
+        <Header onNavigate={handleNavigation} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/agents" element={<Agents />} />

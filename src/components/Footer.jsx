@@ -26,8 +26,8 @@ const FooterContainer = styled.div`
 `
 
 const Logo = styled.img`
-  height: 3rem;
-  margin-right: 2rem;
+  height: 4rem;
+  margin-left: 2rem;
 `
 
 const NavLinks = styled.div`

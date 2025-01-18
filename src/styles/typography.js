@@ -6,8 +6,10 @@ export const typography = {
   `,
   AnonymousPro: css`
     font-family: 'Anonymous Pro', monospace; 
+    font-style: normal, italic;
   `,
   Arimo: css`
     font-family: 'Arimo', sans-serif;
+
   `
 } 

@@ -8,10 +8,10 @@ const HeaderContainer = styled.header`
   background-color: #E5E5E5;
 `
 
-const Header = () => {
+const Header = ({ onNavigate }) => {
   return (
     <HeaderContainer>
-      <NavigationBar />
+      <NavigationBar onNavigate={onNavigate} />
     </HeaderContainer>
   )
 }

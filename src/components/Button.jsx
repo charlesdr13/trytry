@@ -5,15 +5,15 @@ import { typography } from '../styles/typography'
 const StyledButton = styled(Link)`
   background: #2734BD;
   color: white !important;
-  border-top: 0.4rem solid white;    
-  border-left: 0.4rem solid white;   
-  border-bottom: 0.4rem solid #1A10A3; 
-  border-right: 0.4rem solid #1A10A3;  
+  border-top: 0.3rem solid white;    
+  border-left: 0.3rem solid white;   
+  border-bottom: 0.3rem solid #1A10A3; 
+  border-right: 0.3rem solid #1A10A3;  
   padding: 0.5rem 1.5rem;
   border-radius: 2px;
   min-width: 15rem;
   min-height: 6rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6) !important;
   text-decoration: none;
   display: inline-block;
   text-align: center;
@@ -29,12 +29,12 @@ const StyledButton = styled(Link)`
   &:hover {
     background: #2a4dad;
     transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8) !important;
   }
 
   &:active {
     transform: translateY(1px);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8) !important;
   }
 `
 

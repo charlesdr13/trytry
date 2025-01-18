@@ -20,6 +20,10 @@ import TokenomicsBG from '../assets/images/TokenomicsBG.svg'
 import plaqueBackground from '../assets/images/plaqueBG.svg'
 import blueDivider from '../assets/images/blueDiv.svg'
 import trumpHotelImage from '../assets/images/trumpHotel.png'
+import LoadingScreen from '../components/LoadingScreen';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import globe from '../assets/videos/globe.webm'
 
 
 const Container = styled.div`
@@ -110,44 +114,27 @@ const CenteredImage = styled.img`
 `
 
 const ImageContainerBack = styled.div`
-  position: relative;
   width: 100%;
-  height: 100%; 
+  height: ${props => props.height || '200px'};
   background: transparent;
   z-index: 1;
-  margin-top: -9rem;
+  position: relative;
+  overflow: hidden;
+  
 
-  img {
-    width: 63%;
-    height: 63%;
+  video {
+    width: 110%;
+    height: 140%;
     object-fit: cover;
+    object-position: center top;
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: ${props => props.height || '200px'};
-    margin: 2rem auto;
-    margin-top: -11rem;
-    z-index: 1;
-  }
-
-  @media (max-width: 980px) {
-    margin-top: -260px;
-  }
-
-  @media (max-width: 820px) {
-    margin-top: -14rem;
-  }
-
-  @media (max-width: 600px) {
-    margin-top: -12rem;
-  }
-
-  @media (max-width: 500px) {
-    margin-top: -10rem;
-  }
-
-  @media (max-width: 440px) {
-    margin-top: -6rem;
+    height: 40rem;
+    width: 50rem;
+    margin-left: 7rem;
+    margin-top: -17rem;
+    margin-bottom: 15rem;
   }
 `
 
@@ -1043,114 +1030,169 @@ const TrumpHotelBackground = styled.div`
   }
 `
 
+const ImagePlaceholder = styled.div`
+  width: 100%;
+  height: ${props => props.height || '200px'};
+  background: #ccc;
+  margin: 1rem auto;
+  border: 1px solid #999;
+
+  @media ${QUERIES.tabletAndUp} {
+    height: ${props => props.height || '300px'};
+    margin: 2rem auto;
+  }
+`
+
 const Home = () => {
+  const location = useLocation();
+  const [showLoading, setShowLoading] = useState(() => {
+    // Show loading only on fresh loads/refreshes, not internal navigation
+    return !sessionStorage.getItem('navigationState');
+  });
+
+  useEffect(() => {
+    if (showLoading) {
+      // Set navigation state to prevent loading screen on internal navigation
+      sessionStorage.setItem('navigationState', 'active');
+      
+      const timer = setTimeout(() => {
+        setShowLoading(false);
+      }, 3500);
+      
+      // Clear the navigation state when component unmounts
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [showLoading]);
+
+  // Clear navigation state on page refresh
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem('navigationState');
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, []);
+
   return (
-    <Container>
-      <GradientBackground />
-      <Hero>
-        <h2>THE DREAM TEAM HAS BEEN ASSEMBLED FOR</h2>
-        <CenteredImage 
-        src={term2Front} 
-        alt="TERM2"
-        />
-        <ImageContainerBack height="100%" margin-top="-20rem">
-          <img src={landingImageBack} alt="Image of President Trump and the others" />
-        </ImageContainerBack>
-        <ImageContainerFront height="100%" margin-top="-20rem">
-          <img src={landingImageFront} alt="Image of Globe" />
-        </ImageContainerFront> 
-      </Hero>
-      <ImageContainerRectangle height="100%" margin-top="-20rem">
-        <img src={rectangleBG2} alt="Image of Rectangle Background" />
-      </ImageContainerRectangle> 
-      <ImageContainerRectangleLeft height="10%" margin-top="-20rem">
-        <img src={rectangleBG2Left} alt="Image of Rectangle Background" />
-      </ImageContainerRectangleLeft> 
-      <ImageContainerRectangleRight height="10%" margin-top="-20rem">
-        <img src={rectangleBG2Right} alt="Image of Rectangle Background" />
-      </ImageContainerRectangleRight> 
-      <MidSection>
-          <h2>WHAT IS TERM2?</h2>
-          <p>Trump's final term, the greatest term, and the last chance to Make America Great Again.</p>
-          <p>Term2 is the antiembodiment of the fake news.</p>
-          <p style={{lineHeight: '1.2'}}>We are the 100% authentic and true, people are saying the truest, WOW it's so true - documentation of the next 4 years of greatness.</p>
-          <p>DOGE, MAGA, Crypto, and everything between will be immortalized here.</p>
-          <p>Are you orange-man pilled yet? </p>
-        <GoalMap margin-top="-20rem" height="100%">
-          <img src={goals} alt="Image of Goal Map" />
-        </GoalMap>
-      </MidSection>
-      <WoodBackground>
-          <img src={woodBG} alt="Image of Wood Background" />
-      </WoodBackground>
-      <RedDivider>
-        <img src={redDiv} alt="Image of Red Divider" />
-      </RedDivider>
-      <GradientBackground2 />
-      <AgentSection>
-        <AgentImageContainer height="100%">
-          <img src={agentImage} alt="Image of Agent" />
-        </AgentImageContainer>
-        <h2>THE A(GENT)-TEAM</h2>
-        <h3>AI'S WORKING 24/7 FOR THE AMERICAN DREAM</h3>
-        <p>They said you can't run the country with AI, so you know what we did?</p>
-        <p>The biggest AI you've ever seen. Agents - Can you believe that?</p>
-        <p style={{lineHeight: '1.2'}}>All 100% oil-filled and American. Full control over the Federal reserve or 'wallets'. They choose where it goes cause who could do a worse job than the that knucklehead Jerome?</p>
-        <p style={{lineHeight: '1.2'}}>They might fight inflation, make sex robots, invest in more trump towers, definitely more towers - or even de-sci whatever that is. The point is they are going to make crypto great again!</p>
-        <ButtonHome to="/agents">MEET THE AGENTS</ButtonHome>
-      </AgentSection>
-      <FlagDivider>
-        <img src={flagDiv} alt="Image of Flag Divider" />
-      </FlagDivider>
-      <TokenomicsBackground>
-        <img src={TokenomicsBG} alt="Image of Tokenomics Background" />
-      </TokenomicsBackground>
-      <TokenomicsSection>
-        <h2>TOKENOMICS</h2>
-        <h3>TOTAL SUPPLY</h3>
-        <h3 className="liquidity"> LIQUIDITY</h3>
-        <h3 className="agents"> 8 AGENTS</h3>
-        <h3 className="addresses1"> ADDRESSES</h3>
-        <h3 className="treasury"> TREASURY</h3>
-        <h3 className="addresses2"> ADDRESSES</h3>
-        <h3 className="marketing"> MARKETING</h3>
-        <h3 className="addresses3"> ADDRESSES</h3>
-        <PlagueBG1>
-          <img src={plaqueBackground} alt="Image of Plaque Background" />
-        </PlagueBG1>
-        <ButtonToken to="/tokenomics">1 BILLION</ButtonToken>
-        <ButtonToken2 to="/tokenomics">BURNED</ButtonToken2>
-        <PlagueBG2>
-          <img src={plaqueBackground} alt="Image of Plaque Background" />
-        </PlagueBG2>
-        <ButtonToken3 to="/tokenomics">20 MILLION (2%) X8</ButtonToken3>
-        <ButtonToken4 to="/tokenomics">VIEW NOW</ButtonToken4>
-        <PlagueBG3>
-          <img src={plaqueBackground} alt="Image of Plaque Background" />
-        </PlagueBG3>
-        <ButtonToken5 to="/tokenomics">100 MILLION (10%)</ButtonToken5>
-        <ButtonToken6 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken6>
-        <PlagueBG4>
-          <img src={plaqueBackground} alt="Image of Plaque Background" />
-        </PlagueBG4>
-        <ButtonToken7 to="/tokenomics">100 MILLION (10%)</ButtonToken7>
-        <ButtonToken8 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken8>
-      </TokenomicsSection>
-      <BlueDivider>
-        <img src={blueDivider} alt="Image of Blue Divider" />
-      </BlueDivider>
-      <GradientBackground3 />
-      <HowToBuy />
-      <FlagDivider style={{marginTop: '2rem'}}>
-        <img src={flagDiv} alt="Image of Flag Divider" />
-      </FlagDivider>
-      <WhiteBackground />
-      <TrumpHotelBackground>
-        <img src={trumpHotelImage} alt="Image of Trump Hotel" />
-      </TrumpHotelBackground>
-      <FAQ />
-      <Footer />
-    </Container>
+    <>
+      {showLoading && <LoadingScreen onLoadingComplete={() => setShowLoading(false)} />}
+      <Container>
+        <GradientBackground />
+        <Hero>  
+          <h2>THE DREAM TEAM HAS BEEN ASSEMBLED FOR</h2>
+          <CenteredImage 
+          src={term2Front} 
+          alt="TERM2"
+          />
+          <ImageContainerBack height="100%" margin-top="-20rem">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src={globe} type="video/webm" />
+            </video>
+          </ImageContainerBack>
+          <ImageContainerFront height="100%" margin-top="-20rem">
+            <img src={landingImageFront} alt="Image of Globe" />
+          </ImageContainerFront> 
+        </Hero>
+        <ImageContainerRectangle height="100%" margin-top="-20rem">
+          <img src={rectangleBG2} alt="Image of Rectangle Background" />
+        </ImageContainerRectangle> 
+        <ImageContainerRectangleLeft height="10%" margin-top="-20rem">
+          <img src={rectangleBG2Left} alt="Image of Rectangle Background" />
+        </ImageContainerRectangleLeft> 
+        <ImageContainerRectangleRight height="10%" margin-top="-20rem">
+          <img src={rectangleBG2Right} alt="Image of Rectangle Background" />
+        </ImageContainerRectangleRight> 
+        <MidSection>
+            <h2>WHAT IS TERM2?</h2>
+            <p>Trump's final term, the greatest term, and the last chance to Make America Great Again.</p>
+            <p>Term2 is the antiembodiment of the fake news.</p>
+            <p style={{lineHeight: '1.2'}}>We are the 100% authentic and true, people are saying the truest, WOW it's so true - documentation of the next 4 years of greatness.</p>
+            <p>DOGE, MAGA, Crypto, and everything between will be immortalized here.</p>
+            <p>Are you orange-man pilled yet? </p>
+          <GoalMap margin-top="-20rem" height="100%">
+            <img src={goals} alt="Image of Goal Map" />
+          </GoalMap>
+        </MidSection>
+        <WoodBackground>
+            <img src={woodBG} alt="Image of Wood Background" />
+        </WoodBackground>
+        <RedDivider>
+          <img src={redDiv} alt="Image of Red Divider" />
+        </RedDivider>
+        <GradientBackground2 />
+        <AgentSection>
+          <AgentImageContainer height="100%">
+            <img src={agentImage} alt="Image of Agent" />
+          </AgentImageContainer>
+          <h2>THE A(GENT)-TEAM</h2>
+          <h3>AI'S WORKING 24/7 FOR THE AMERICAN DREAM</h3>
+          <p>They said you can't run the country with AI, so you know what we did?</p>
+          <p>The biggest AI you've ever seen. Agents - Can you believe that?</p>
+          <p style={{lineHeight: '1.2'}}>All 100% oil-filled and American. Full control over the Federal reserve or 'wallets'. They choose where it goes cause who could do a worse job than the that knucklehead Jerome?</p>
+          <p style={{lineHeight: '1.2'}}>They might fight inflation, make sex robots, invest in more trump towers, definitely more towers - or even de-sci whatever that is. The point is they are going to make crypto great again!</p>
+          <ButtonHome to="/agents">MEET THE AGENTS</ButtonHome>
+        </AgentSection>
+        <FlagDivider>
+          <img src={flagDiv} alt="Image of Flag Divider" />
+        </FlagDivider>
+        <TokenomicsBackground>
+          <img src={TokenomicsBG} alt="Image of Tokenomics Background" />
+        </TokenomicsBackground>
+          <TokenomicsSection>
+            <h2>TOKENOMICS</h2>
+            <h3>TOTAL SUPPLY</h3>
+            <h3 className="liquidity"> LIQUIDITY</h3>
+            <h3 className="agents"> 8 AGENTS</h3>
+            <h3 className="addresses1"> ADDRESSES</h3>
+            <h3 className="treasury"> TREASURY</h3>
+            <h3 className="addresses2"> ADDRESSES</h3>
+            <h3 className="marketing"> MARKETING</h3>
+            <h3 className="addresses3"> ADDRESSES</h3>
+            <PlagueBG1>
+              <img src={plaqueBackground} alt="Image of Plaque Background" />
+            </PlagueBG1>
+            <ButtonToken to="/tokenomics">1 BILLION</ButtonToken>
+            <ButtonToken2 to="/tokenomics">BURNED</ButtonToken2>
+            <PlagueBG2>
+              <img src={plaqueBackground} alt="Image of Plaque Background" />
+            </PlagueBG2>
+            <ButtonToken3 to="/tokenomics">20 MILLION (2%) X8</ButtonToken3>
+            <ButtonToken4 to="/tokenomics">VIEW NOW</ButtonToken4>
+            <PlagueBG3>
+              <img src={plaqueBackground} alt="Image of Plaque Background" />
+            </PlagueBG3>
+            <ButtonToken5 to="/tokenomics">100 MILLION (10%)</ButtonToken5>
+            <ButtonToken6 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken6>
+            <PlagueBG4>
+              <img src={plaqueBackground} alt="Image of Plaque Background" />
+            </PlagueBG4>
+            <ButtonToken7 to="/tokenomics">100 MILLION (10%)</ButtonToken7>
+            <ButtonToken8 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken8>
+          </TokenomicsSection>
+        <BlueDivider>
+          <img src={blueDivider} alt="Image of Blue Divider" />
+        </BlueDivider>
+        <GradientBackground3 />
+        <HowToBuy />
+        <FlagDivider style={{marginTop: '2rem'}}>
+          <img src={flagDiv} alt="Image of Flag Divider" />
+        </FlagDivider>
+        <WhiteBackground />
+        <TrumpHotelBackground>
+          <img src={trumpHotelImage} alt="Image of Trump Hotel" />
+        </TrumpHotelBackground>
+        <FAQ />
+        <Footer />
+      </Container>
+    </>
   )
 }
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { QUERIES } from '../constants/breakpoints'
 import { typography } from '../styles/typography'
@@ -16,6 +16,7 @@ const Nav = styled.nav`
   font-family: monospace;
   position: relative;
   background: #000520;
+  z-index: 10;
 
 
   @media ${QUERIES.tabletAndUp} {
@@ -32,7 +33,7 @@ const Logo = styled(Link)`
   align-items: center;
   flex: 1;
   text-decoration: none;
-  z-index: 2;
+  z-index: 10;
   ${typography.Lubalin}
 
   img {
@@ -60,7 +61,7 @@ const NavLinks = styled.div`
   gap: 3rem;
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 
   @media ${QUERIES.tabletAndUp} {;
     position: relative;
@@ -177,27 +178,38 @@ const BuyButton = styled(NavLink)`
   }
 `
 
-const NavigationBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+const NavigationBar = ({ onNavigate }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = (path) => {
+    setIsMenuOpen(false);
+    if (path.startsWith('#')) return;
+    
+    onNavigate(path);
+    setTimeout(() => {
+      navigate(path);
+    }, 400);
+  };
 
   return (
     <Nav>
-      <Logo to="/">
+      <Logo onClick={() => handleClick('/')}>
         <img src={term2Logo} alt="TERM2 Logo" />
       </Logo>
       <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? '✕' : '☰'}
       </MenuButton>
       <NavLinks isOpen={isMenuOpen}>
-        <NavLink to="/agents" onClick={() => setIsMenuOpen(false)}>THE AGENTS</NavLink>
-        <NavLink to="#" onClick={() => setIsMenuOpen(false)}>TWITTER</NavLink>
-        <NavLink to="#" onClick={() => setIsMenuOpen(false)}>TELEGRAM</NavLink>
-        <NavLink to="#" onClick={() => setIsMenuOpen(false)}>DEXSCREENER</NavLink>
-        <NavLink to="#" onClick={() => setIsMenuOpen(false)}>DEXTOOLS</NavLink>
-        <BuyButton to="#" onClick={() => setIsMenuOpen(false)}>BUY NOW</BuyButton>
+        <NavLink onClick={() => handleClick('/agents')}>THE AGENTS</NavLink>
+        <NavLink onClick={() => handleClick('#')}>TWITTER</NavLink>
+        <NavLink onClick={() => handleClick('#')}>TELEGRAM</NavLink>
+        <NavLink onClick={() => handleClick('#')}>DEXSCREENER</NavLink>
+        <NavLink onClick={() => handleClick('#')}>DEXTOOLS</NavLink>
+        <BuyButton onClick={() => handleClick('#')}>BUY NOW</BuyButton>
       </NavLinks>
     </Nav>
-  )
-}
+  );
+};
 
 export default NavigationBar 
