@@ -796,14 +796,37 @@ const TokenomicsSection = styled.section`
     }
 `
 
-const ButtonToken = styled(Button)`
+const ButtonToken = styled.div`
+  // Original ButtonToken styles
   position: relative;
   margin: 2rem auto;
   margin-top: -23rem;
   margin-left: 7rem;
   position: absolute;
   z-index: 5;
-  padding: 1.5rem 1rem;
+  padding: 1rem rem;
+
+  // Inherited Button styles
+  background: #2734BD;
+  color: white;
+  border-top: 0.3rem solid white;    
+  border-left: 0.3rem solid white;   
+  border-bottom: 0.3rem solid #1A10A3; 
+  border-right: 0.3rem solid #1A10A3;  
+  border-radius: 2px;
+  min-width: 15rem;
+  min-height: 5rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 1.75rem 2rem;
+  font-size: 2rem;
+  transition: all 0.2s ease;
+  z-index: 6;
+  ${typography.AnonymousPro}
+
 `
 const ButtonToken2 = styled(Button)`
   position: relative;
@@ -814,7 +837,8 @@ const ButtonToken2 = styled(Button)`
   z-index: 5;
   padding: 1.5rem 1rem;
 `
-const ButtonToken3 = styled(Button)`
+const ButtonToken3 = styled.div`
+  // Original ButtonToken3 styles
   position: relative;
   margin: 2rem auto;
   margin-top: -23rem;
@@ -822,6 +846,27 @@ const ButtonToken3 = styled(Button)`
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
+
+  // Inherited Button styles
+  background: #2734BD;
+  color: white;
+  border-top: 0.3rem solid white;    
+  border-left: 0.3rem solid white;   
+  border-bottom: 0.3rem solid #1A10A3; 
+  border-right: 0.3rem solid #1A10A3;  
+  border-radius: 2px;
+  min-width: 15rem;
+  min-height: 6rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 1.75rem 1.3rem;
+  font-size: 2rem;
+  transition: all 0.2s ease;
+  z-index: 6;
+  ${typography.AnonymousPro}
 `
 const ButtonToken4 = styled(Button)`
   position: relative;
@@ -832,7 +877,8 @@ const ButtonToken4 = styled(Button)`
   z-index: 5;
   padding: 1.5rem 1rem;
 `
-const ButtonToken5 = styled(Button)`
+const ButtonToken5 = styled.div`
+  // Original ButtonToken5 styles
   position: relative;
   margin: 2rem auto;
   margin-top: -23rem;
@@ -840,6 +886,27 @@ const ButtonToken5 = styled(Button)`
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
+
+  // Inherited Button styles
+  background: #2734BD;
+  color: white;
+  border-top: 0.3rem solid white;    
+  border-left: 0.3rem solid white;   
+  border-bottom: 0.3rem solid #1A10A3; 
+  border-right: 0.3rem solid #1A10A3;  
+  border-radius: 2px;
+  min-width: 15rem;
+  min-height: 6rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 1.75rem 1.2rem;
+  font-size: 2rem;
+  transition: all 0.2s ease;
+  z-index: 6;
+  ${typography.AnonymousPro}
 `
 const ButtonToken6 = styled(Button)`
   position: relative;
@@ -850,7 +917,8 @@ const ButtonToken6 = styled(Button)`
   z-index: 5;
   padding: 1.5rem 1rem;
 `
-const ButtonToken7 = styled(Button)`
+const ButtonToken7 = styled.div`
+  // Original ButtonToken7 styles
   position: relative;
   margin: 2rem auto;
   margin-top: -23rem;
@@ -858,6 +926,27 @@ const ButtonToken7 = styled(Button)`
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
+
+  // Inherited Button styles
+  background: #2734BD;
+  color: white;
+  border-top: 0.3rem solid white;    
+  border-left: 0.3rem solid white;   
+  border-bottom: 0.3rem solid #1A10A3; 
+  border-right: 0.3rem solid #1A10A3;  
+  border-radius: 2px;
+  min-width: 15rem;
+  min-height: 6rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 1.75rem 1.2rem;
+  font-size: 2rem;
+  transition: all 0.2s ease;
+  z-index: 6;
+  ${typography.AnonymousPro}
 `
 const ButtonToken8 = styled(Button)`
   position: relative;

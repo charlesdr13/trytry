@@ -17,9 +17,10 @@ const FAQSection = styled.section`
 
 const FAQTitle = styled.h2`
   color: #FF2727;
-  font-size: 7rem;
-  font-weight: bold;
-  margin-bottom: 3rem;
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: -0.4rem;
+  margin-bottom: 2rem;
   -webkit-text-stroke: 2px black;
   text-shadow: 
     0 4px 0 #000,
@@ -63,6 +64,8 @@ const QuestionBox = styled.div`
   h3 {
     color: #333;
     font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025rem;
     margin-bottom: ${props => props.isOpen ? '1rem' : '0'};
     ${typography.AnonymousPro}
   }
@@ -83,11 +86,11 @@ const QuestionBox = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   z-index: 8;
-  margin-left: 8rem;
+  margin-left: 7rem;
   margin-top: -2rem;
-  width: 45rem;
+  width: 47rem;
   height: auto;
-  min-width: 45rem;
+  min-width: 48rem;
 
   img {
     width: 100%;
@@ -101,34 +104,45 @@ const FAQ = () => {
   const questions = [
     {
       id: 1,
-      question: "Question Here",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tellus mi, pretium et sagittis in, suscipit in velit."
+      question: "What exactly is Term2?",
+      answer: "Term2 is an entertainment brand that provides satirical coverage of President Trump's second term, featuring everything from executive order announcements to cabinet meeting highlights. We combine Trump's actual presidency with comedic interpretations of current events."
     },
     {
       id: 2,
-      question: "Question Here",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      question: "Is this affiliated with the Trump administration",
+      answer: "No, Term2 is a parody account and is not affiliated with President Trump, his administration, or any government organization. We create satirical content for entertainment purposes only."
     },
     {
       id: 3,
-      question: "Question Here",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      question: "Why 'Term2'?",
+      answer: "The name celebrates Trump's victory and return to office while building our own unique entertainment brand. We capture the excitement and energy of Trump's second term through humor and satire."
     },
     {
       id: 4,
-      question: "Question Here",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      question: "Are the events in your content real?",
+      answer: "We mix real events with satire. While President Trump, his cabinet (including Elon Musk and Vivek Ramaswamy at DOGE), and major policy decisions are real, our content provides a humorous interpretation of these events and personalities."
     },
     {
       id: 5,
-      question: "Question Here",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      question: "How do you create your content?",
+      answer: "We closely follow President Trump's actual speeches, policies, and public statements, fake news, and other developments then create entertaining content that captures his unique communication style and the dynamic energy of his second term."
     },
     {
       id: 6,
-      question: "Question Here",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      question: "Can I submit ideas for Term2 content?",
+      answer: "We love hearing from our community! While we can't use every suggestion, we're always interested in creative ideas that help capture the spirit of Trump's second term and bring more people into making america great again. Great America, Great world."
+    },
+    {
+      id: 7,
+      question: "Do you take political requests or commissioned content?",
+      answer: "No, we maintain creative independence to ensure our content remains focused on entertainment rather than specific political messaging."
+    },
+    {
+      id: 8,
+      question: "What's the deal with DOGE?",
+      answer: "The Department of Government Efficiency (DOGE) is a real government department headed by Elon Musk and Vivek Ramaswamy. While we cover their actual work, we do so in our signature entertaining style."
     }
+    
   ]
 
   return (

@@ -73,6 +73,7 @@ const InfoContainer = styled.div`
   max-width: 1200px;
   margin: 4rem auto;
   gap: 4rem;
+  margin-left: 30rem;
 `
 
 const ImageSection = styled.div`
@@ -81,8 +82,9 @@ const ImageSection = styled.div`
   z-index: 2;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  width: auto;
-  min-height: 400px;
+  min-height: 28rem;
+  min-width: 30rem;
+  margin-left: -8rem;
 
   img {
     width: 100%;
