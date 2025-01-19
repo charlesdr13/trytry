@@ -11,6 +11,7 @@ import MuskCharacter from '../assets/images/MuskCharacter.png'
 import ComingSoon from '../assets/images/comingSoon.png'
 import flagDiv from '../assets/images/flagDivider.svg'
 import trumpHotelImage from '../assets/images/trumpHotel.png'
+import agentIntro from '../assets/images/AgentIntro.png'
 
 const AgentsContainer = styled.div`
   width: 100%;
@@ -80,7 +81,15 @@ const ImageSection = styled.div`
   z-index: 2;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
+  width: auto;
   min-height: 400px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
 `
 
 const InfoSection = styled.div`
@@ -200,7 +209,7 @@ const AgentsBackground = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: 128.5rem;
+    height: 480vh;
     width: auto;
     margin-left: -2rem;
     margin-top: -1rem;
@@ -271,11 +280,10 @@ const WhiteBackground = styled.div`
 
 const TrumpHotelBackground = styled.div`
   position: absolute;
-  top: 195rem;
   left: 0rem;
   width: 100%;
   z-index: 5;
-  margin-bottom: -450rem;
+
 
   img {
     width: 100%;
@@ -284,6 +292,7 @@ const TrumpHotelBackground = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
+    top: 590vh;
     height: auto;
     width: 100%;
   }
@@ -346,9 +355,69 @@ const agents = [
     description: "Elon Musk Co-head of DOGE and self-proclaimed 'Chief Efficiency Merchant,' Musk joined the administration after Trump promised him Mars could be the 51st state. Known for reducing government paperwork by replacing all forms with Twitter polls and converting the entire federal fleet to Cybertrucks. Currently in a heated battle with Baron Trump over who gets to play with the Space Force toys first."
   },
   {
-    name: 'Coming Soon',
+    name:'Agent 2',
     badgeImage: ComingSoon,
-    wallet: 'MJKqp326RZCHnAAbew9MDdui3iCKWco7fsK9sVuZTX2',
+    wallet: '--',
+    twitterHandle: 'realDonald',
+    telegramHandle: 'realDonaldT',
+    twitter: '#',
+    telegram: '#',
+    description: ''
+   },
+   {
+    name:'Agent 3',
+    badgeImage: ComingSoon,
+    wallet: '--',
+    twitterHandle: 'realDonald',
+    telegramHandle: 'realDonaldT',
+    twitter: '#',
+    telegram: '#',
+    description: ''
+   },
+   {
+    name:'Agent 4',
+    badgeImage: ComingSoon,
+    wallet: '--',
+    twitterHandle: 'realDonald',
+    telegramHandle: 'realDonaldT',
+    twitter: '#',
+    telegram: '#',
+    description: ''
+   },
+   {
+    name:'Agent 5',
+    badgeImage: ComingSoon,
+    wallet: '--',
+    twitterHandle: 'realDonald',
+    telegramHandle: 'realDonaldT',
+    twitter: '#',
+    telegram: '#',
+    description: ''
+   },
+   {
+    name:'Agent 6',
+    badgeImage: ComingSoon,
+    wallet: '--',
+    twitterHandle: 'realDonald',
+    telegramHandle: 'realDonaldT',
+    twitter: '#',
+    telegram: '#',
+    description: ''
+   },
+   {
+    name:'Agent 7',
+    badgeImage: ComingSoon,
+    wallet: '--',
+    twitterHandle: 'realDonald',
+    telegramHandle: 'realDonaldT',
+    twitter: '#',
+    telegram: '#',
+    description: ''
+   },
+   {
+    name:'Agent 8',
+    badgeImage: ComingSoon,
+    wallet: '--',
     twitterHandle: 'realDonald',
     telegramHandle: 'realDonaldT',
     twitter: '#',
@@ -371,7 +440,7 @@ const Agents = () => {
       
       <InfoContainer>
         <ImageSection>
-          {/* Agent image will go here */}
+          <img src={agentIntro} style={{borderRadius: '20px'}} alt="agent intro" />
         </ImageSection>
         <InfoSection>
           <TwitterBox>

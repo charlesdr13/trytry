@@ -208,16 +208,20 @@ const StatusBadge = styled.span`
 `
 
 const AgentCard = ({ agent }) => {
-  const isComingSoon = agent.name === 'Coming Soon';
+  // Function to check if name matches "Agent Name {number}" pattern
+  const isComingSoon = (name) => {
+    const pattern = /^Agent \d+$/;
+    return pattern.test(name);
+  };
 
   return (
-    <CardWrapper isComingSoon={isComingSoon}>
+    <CardWrapper isComingSoon={isComingSoon(agent.name)}>
       <CardHeader />
       <LeftSection>
-        <AgentBadge isComingSoon={isComingSoon}>
+        <AgentBadge isComingSoon={isComingSoon(agent.name)}>
           <img src={agent.badgeImage} alt={agent.name} />
         </AgentBadge>
-        <AgentName isComingSoon={isComingSoon}>{agent.name}</AgentName>
+        <AgentName isComingSoon={isComingSoon(agent.name)}>{agent.name}</AgentName>
       </LeftSection>
       
       <RightSection>
@@ -226,7 +230,7 @@ const AgentCard = ({ agent }) => {
           <span>{agent.wallet}</span>
         </WalletSection>
         
-        {!isComingSoon && (
+        {!isComingSoon(agent.name) && (
           <>
             <SocialLinks>
               <SocialLink href={agent.twitter}>
@@ -252,20 +256,20 @@ const AgentCard = ({ agent }) => {
           <CapabilitiesGrid>
             <div>
               <span>Twitter</span>
-              <StatusBadge status="live" isComingSoon={isComingSoon}>
-                {isComingSoon ? 'offline' : 'live'}
+              <StatusBadge status="live" isComingSoon={isComingSoon(agent.name)}>
+                {isComingSoon(agent.name) ? 'offline' : 'live'}
               </StatusBadge>
             </div>
             <div>
               <span>Telegram</span>
-              <StatusBadge status="live" isComingSoon={isComingSoon}>
-                {isComingSoon ? 'offline' : 'live'}
+              <StatusBadge status="live" isComingSoon={isComingSoon(agent.name)}>
+                {isComingSoon(agent.name) ? 'offline' : 'live'}
               </StatusBadge>
             </div>
             <div>
               <span>On-chain</span>
-              <StatusBadge isComingSoon={isComingSoon}>
-                {isComingSoon ? 'offline' : 'coming soon'}
+              <StatusBadge isComingSoon={isComingSoon(agent.name)}>
+                {isComingSoon(agent.name) ? 'offline' : 'coming soon'}
               </StatusBadge>
             </div>
           </CapabilitiesGrid>
