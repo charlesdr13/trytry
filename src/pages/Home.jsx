@@ -24,7 +24,8 @@ import LoadingScreen from '../components/LoadingScreen';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import globe from '../assets/videos/globe.webm'
-
+import copyButtonImage from '../assets/images/copyBar.svg'
+import CopyButton from '../components/CopyButton'
 
 const Container = styled.div`
   width: 100%;
@@ -133,7 +134,7 @@ const ImageContainerBack = styled.div`
     height: 40rem;
     width: 50rem;
     margin-left: 7rem;
-    margin-top: -17rem;
+    margin-top: -17.8rem;
     margin-bottom: 15rem;
   }
 `
@@ -230,7 +231,7 @@ const ImageContainerRectangle = styled.div`
   position: relative;
   left: 0%;
   display: flex;
-  margin-top: -2.4rem;
+  margin-top: -2.8rem;
   margin-left: -1rem;
 
   img {
@@ -240,10 +241,10 @@ const ImageContainerRectangle = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: ${props => props.height || '200px'};
-    margin-left: -24.5rem;
+    height: ${props => props.height || '300px'};
+    margin-left: -24.8rem;
     margin-top: -4.8rem;
-    width: 120rem;
+    width: 138rem;
     z-index: 3;
   }
 `
@@ -266,7 +267,7 @@ const ImageContainerRectangleLeft = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '200px'};
-    margin-top: -11.9rem;
+    margin-top: -12rem;
     margin-left: -24.5rem;
     width: 14%;
     z-index: 4;
@@ -289,9 +290,9 @@ const ImageContainerRectangleRight = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '200px'};
-    margin-top: -9rem;
+    margin-top: -9.1rem;
     margin-left: 85.2rem;
-    width: 14.6%;
+    width: 14.8%;
     z-index: 3;
     ${typography.Arimo}
   }
@@ -1199,6 +1200,11 @@ const Home = () => {
         <ImageContainerRectangleRight height="10%" margin-top="-20rem">
           <img src={rectangleBG2Right} alt="Image of Rectangle Background" />
         </ImageContainerRectangleRight> 
+        <CopyButton 
+          imageSrc={copyButtonImage}
+          textToCopy="http://localhost:5173/"
+          tooltipText="Address copied!"
+        />
         <MidSection>
             <h2>WHAT IS TERM2?</h2>
             <p>Trump's final term, the greatest term, and the last chance to Make America Great Again.</p>
