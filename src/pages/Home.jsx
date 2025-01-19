@@ -1063,7 +1063,7 @@ const BlueDivider = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '60px'};
     margin-left: -30rem;
-    margin-top: 11rem;
+    margin-top: 12.5rem;
     width: 150rem;
   }
 `
@@ -1203,7 +1203,7 @@ const Home = () => {
         <CopyButton 
           imageSrc={copyButtonImage}
           textToCopy="http://localhost:5173/"
-          tooltipText="Address copied!"
+          tooltipText="Copied to Clipboard!"
         />
         <MidSection>
             <h2>WHAT IS TERM2?</h2>

@@ -255,8 +255,8 @@ const FlagDivider = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '350px'};
-    margin-left: -2rem;
-    margin-top: 10rem;
+    margin-left: -2.5rem;
+    margin-top: 11rem;
     width: 150rem;
     z-index: 3;
   }
