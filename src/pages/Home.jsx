@@ -248,7 +248,7 @@ const ImageContainerRectangleRight = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '200px'};
     margin-top: -9.1rem;
-    margin-left: 85.2rem;
+    margin-left: 85rem;
     width: 14.8%;
     z-index: 3;
     ${typography.Arimo}
