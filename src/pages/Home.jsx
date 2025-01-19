@@ -121,6 +121,7 @@ const ImageContainerBack = styled.div`
   z-index: 1;
   position: relative;
   overflow: hidden;
+  margin-left: -0.7rem;
   
 
   video {
@@ -145,7 +146,8 @@ const ImageContainerFront = styled.div`
   height: 100%; 
   background: transparent;
   z-index: 3;
-  margin-top: -12rem;
+  margin-top: -20rem;
+  margin-left: 0.75rem;
 
   img {
     width: 100%;
@@ -157,54 +159,6 @@ const ImageContainerFront = styled.div`
     margin: 2rem auto;
     margin-top: -43rem;
     z-index: 3;
-  }
-
-  @media (max-width: 1120px) {
-    margin-top: -35rem;
-  }
-
-  @media (max-width: 1000px) {
-    margin-top: -31rem;
-  }
-
-  @media (max-width: 900px) {
-    margin-top: -26rem;
-  }
-
-  @media (max-width: 820px) {
-    margin-top: -24rem;
-  }
-
-  @media (max-width: 720px) {
-    margin-top: -20rem;
-  }
-
-  @media (max-width: 650px) {
-    margin-top: -18rem;
-  }
-
-  @media (max-width: 600px) {
-    margin-top: -14rem;
-  }
-
-  @media (max-width: 550px) {
-    margin-top: -12rem;
-  }
-
-  @media (max-width: 510px) {
-    margin-top: -10rem;
-  }
-
-  @media (max-width: 478px) {
-    margin-top: -8rem;
-  }
-
-  @media (max-width: 440px) {
-    margin-top: -6rem;
-  }
-
-  @media (max-width: 420px) {
-    margin-top: -2rem;
   }
 `
 const ImageContainer = styled.div`
@@ -233,6 +187,8 @@ const ImageContainerRectangle = styled.div`
   display: flex;
   margin-top: -2.8rem;
   margin-left: -1rem;
+  z-index: 5;
+  width: 50rem;
 
   img {
     width: 100%;
@@ -249,14 +205,14 @@ const ImageContainerRectangle = styled.div`
   }
 `
 const ImageContainerRectangleLeft = styled.div`
-  width: 8.7%;
+  width: 12.5%;
   height: ${props => props.height || '200px'};
   background: transparent;
   position: relative;
   left: 0%;
   display: flex;
   margin-left: -1rem;
-  margin-top: -3.1rem;
+  margin-top: -4.3rem;
   z-index: 6;
 
   img {
@@ -274,14 +230,15 @@ const ImageContainerRectangleLeft = styled.div`
   }
 `
 const ImageContainerRectangleRight = styled.div`
-  width: 9.5%;
+  width: 13%;
   height: ${props => props.height || '200px'};
   background: transparent;
   position: relative;
   display: flex;
-  margin-top: -2.25rem;
-  margin-left: 26.85rem;
-
+  margin-top: -3.25rem;
+  margin-left: 26rem;
+  z-index: 6;
+  
   img {
     width: 100%;
     height: 100%;
@@ -324,6 +281,7 @@ const ImageContainerCopyBar = styled.div`
 const MidSection = styled.section`
   color: #000;
   
+  margin-top: 10rem;
   margin-bottom: 2rem;
   background: transparent;
   z-index: 2;
@@ -331,11 +289,14 @@ const MidSection = styled.section`
     position: relative;
     color: #FF2727;
     z-index: 2;
-    font-size: 1rem;
+    font-size: 5rem;
     font-weight: bold;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-        -webkit-text-stroke: 1.5px black;
+    margin-top: -4rem;
+    margin-left: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    -webkit-text-stroke: 1.5px black;
     text-shadow: 
       0 4px 0 #000,
       0 5px 0 #000,
@@ -343,12 +304,15 @@ const MidSection = styled.section`
       ${typography.AnonymousPro}
   }
     p{
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 400;
       margin: 1rem auto;
       text-align: center;
-      line-height: 1.8  ;
+      gap: 0.5rem;
+      line-height: 2rem;
       z-index: 2;
+      margin-top: 0rem;
+      width: 26rem;
       ${typography.Arimo}
     }
 
@@ -360,7 +324,7 @@ const MidSection = styled.section`
       position: relative;
       z-index: 2;
       font-size: 6.5rem;
-      margin-left: 7rem;
+      margin-left: -3rem;
       margin-top: 7rem;
       margin-bottom: 2rem;
       font-weight: bold;
@@ -439,7 +403,7 @@ const GoalMap = styled.div`
 `
 const WoodBackground = styled.div`
   position: absolute;
-  top: 110rem;
+  top: 93rem;
   left: 0;
   width: 120%;
   z-index: 0;
@@ -451,18 +415,23 @@ const WoodBackground = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: 100%;
+    height: 60rem;
     width: 100%;
+    top: 110rem;
+    left: 0;
+    
   }
 `
 const RedDivider = styled.div`
-  width: 100%;
-  height: ${props => props.height || '50px'};
+  width: 60rem;
+  height: 2.5rem;
   background: transparent;
   position: relative;
-  left: 0%;
+  left: -13%;
   display: flex;
-  margin-top: -2.4rem;
+  margin-top: 4rem;
+  z-index: 2;
+  
 
   img {
     width: 100%;
@@ -473,21 +442,23 @@ const RedDivider = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '50px'};
     margin-left: -30rem;
-    margin-top: 14rem;
+    margin-top: 12rem;
     width: 150rem;
     z-index: 3;
   }
 `
 const GradientBackground2 = styled.div`
   position: absolute;
-  top: 168rem;
+  top: 115rem;
   left: 0;
   width: 100%;
-  height: 60%;  // Adjust this value to control how far down the gradient goes
+  height: 94rem;  // Adjust this value to control how far down the gradient goes
   background: linear-gradient(180deg, #8EEAFF 0%, #FFFFFF 100%);
   z-index: 0;
 
   @media ${QUERIES.tabletAndUp} {
+    top: 168rem;
+    left: 0;
     max-width: 100%;
     padding: 2rem;
     height: 120rem;
@@ -499,6 +470,7 @@ const AgentImageContainer = styled.div`
   background: transparent;
   position: relative;
   z-index: 2;
+  margin-top: 2rem;
 
   img {
     width: 100%;
@@ -524,11 +496,12 @@ const AgentSection = styled.section`
     position: relative;
     color: #FF2727;
     z-index: 2;
-    font-size: 1rem;
+    font-size: 5rem;
     font-weight: bold;
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
-        -webkit-text-stroke: 2px black;
+    text-align: center;
+    -webkit-text-stroke: 2px black;
     text-shadow: 
       0 4px 0 #000,
       0 5px 0 #000,
@@ -540,10 +513,11 @@ const AgentSection = styled.section`
     position: relative;
     color: #FFF;
     z-index: 2;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
         -webkit-text-stroke: 0.8px black;
     text-shadow: 
       0 1px 0 #000,
@@ -557,7 +531,8 @@ const AgentSection = styled.section`
       font-weight: 400;
       margin: 1rem auto;
       text-align: center;
-      line-height: 1.8  ;
+      width: 27rem;
+      line-height: 1.8rem ;
       z-index: 2;
       ${typography.Arimo}
     }
@@ -570,7 +545,7 @@ const AgentSection = styled.section`
       position: relative;
       z-index: 2;
       font-size: 7rem;
-      margin-left: 1rem;
+      margin-left: -1rem;
       margin-top: -1.5rem;
       margin-bottom: 2rem;
       font-weight: bold;
@@ -582,7 +557,7 @@ const AgentSection = styled.section`
       position: relative;
       z-index: 2;
       font-size: 2.7rem;
-      margin-left: 1rem;
+      margin-left: -1rem;
       margin-top: -1.5rem;
       margin-bottom: 2rem;
       font-weight: bold;
@@ -593,7 +568,7 @@ const AgentSection = styled.section`
     p{
       font-size: 1.5rem;
       font-weight: 400;
-      margin-left: 1.2rem;
+      margin-left: 2.2rem;
       text-align: center;
       line-height: 1.8  ;
       width: 75rem;
@@ -606,18 +581,34 @@ const AgentSection = styled.section`
 const ButtonHome = styled(Button)`
   margin: 2rem auto;
   margin-top: 3rem;
-  margin-left: 18.5rem;
+  margin-left: 7rem;
+  width: 5rem;
+  height: 1rem;
+  font-size: 1.4rem;
+  padding: 2rem 0.5rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    margin: 2rem auto;
+    margin-top: 3rem;
+    margin-left: 18.5rem;
+    height: auto;
+    width: auto;
+    padding: 2rem 2.5rem;
+    font-size: 2rem;
+    
+  }
 `
 
 const FlagDivider = styled.div`
-  width: 100%;
-  height: ${props => props.height || '50px'};
+  width: 90rem;
+  height: 14rem;
   background: transparent;
   position: relative;
   left: 0%;
   display: flex;
-  margin-top: -2.4rem;
-
+  margin-top: 3rem;
+  margin-left: -1.2rem;
+  z-index: 2;
   img {
     width: 85%;
     height: 50%;
@@ -634,8 +625,10 @@ const FlagDivider = styled.div`
 `
 
 const TokenomicsBackground = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 52rem;
+  height: 80rem;
+  margin-left: -1rem;
+  margin-top: -11rem;
   background: transparent;
   z-index: 1;
   position: absolute;
@@ -663,11 +656,12 @@ const TokenomicsSection = styled.section`
     position: relative;
     z-index: 5;
     color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 4rem;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: -4rem;
     margin-bottom: 1rem;
-        -webkit-text-stroke: 2px black;
+    margin-left: 3rem;
+    -webkit-text-stroke: 2px black;
     text-shadow: 
       0 4px 0 #000,
       0 5px 0 #000,
@@ -958,7 +952,7 @@ const ButtonToken8 = styled(Button)`
   z-index: 5;
   padding: 1.5rem 1rem;
 `
-const PlagueBG1 = styled.div`
+const PlaqueBG1 = styled.div`
   width: 100%;
   height: ${props => props.height || '200px'};
   background: transparent;
@@ -980,7 +974,7 @@ const PlagueBG1 = styled.div`
   }
 `
 
-const PlagueBG2 = styled.div`
+const PlaqueBG2 = styled.div`
   width: 100%;
   height: ${props => props.height || '200px'};
   background: transparent;
@@ -1001,7 +995,7 @@ const PlagueBG2 = styled.div`
     margin-left: 32rem;
   }
 `
-const PlagueBG3 = styled.div`
+const PlaqueBG3 = styled.div`
   width: 100%;
   height: ${props => props.height || '200px'};
   background: transparent;
@@ -1022,7 +1016,7 @@ const PlagueBG3 = styled.div`
     margin-left: 0rem;
   }
 `
-const PlagueBG4 = styled.div`
+const PlaqueBG4 = styled.div`
   width: 100%;
   height: ${props => props.height || '200px'};
   background: transparent;
@@ -1251,24 +1245,24 @@ const Home = () => {
             <h3 className="addresses2"> ADDRESSES</h3>
             <h3 className="marketing"> MARKETING</h3>
             <h3 className="addresses3"> ADDRESSES</h3>
-            <PlagueBG1>
+            <PlaqueBG1>
               <img src={plaqueBackground} alt="Image of Plaque Background" />
-            </PlagueBG1>
+            </PlaqueBG1>
             <ButtonToken to="/tokenomics">1 BILLION</ButtonToken>
             <ButtonToken2 to="/tokenomics">BURNED</ButtonToken2>
-            <PlagueBG2>
+            <PlaqueBG2>
               <img src={plaqueBackground} alt="Image of Plaque Background" />
-            </PlagueBG2>
+            </PlaqueBG2>
             <ButtonToken3 to="/tokenomics">20 MILLION (2%) X8</ButtonToken3>
             <ButtonToken4 to="/tokenomics">VIEW NOW</ButtonToken4>
-            <PlagueBG3>
+            <PlaqueBG3>
               <img src={plaqueBackground} alt="Image of Plaque Background" />
-            </PlagueBG3>
+            </PlaqueBG3>
             <ButtonToken5 to="/tokenomics">100 MILLION (10%)</ButtonToken5>
             <ButtonToken6 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken6>
-            <PlagueBG4>
+            <PlaqueBG4>
               <img src={plaqueBackground} alt="Image of Plaque Background" />
-            </PlagueBG4>
+            </PlaqueBG4>
             <ButtonToken7 to="/tokenomics">100 MILLION (10%)</ButtonToken7>
             <ButtonToken8 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken8>
           </TokenomicsSection>

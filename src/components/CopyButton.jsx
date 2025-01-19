@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 import { useState } from 'react'
 import { typography } from '../styles/typography'
-
+import { QUERIES } from '../constants/breakpoints'
 const ButtonContainer = styled.div`
   position: relative;
   cursor: pointer;
   transition: transform 0.2s ease;
   z-index: 5;
-  width: 50rem;
+  width: 20rem;  // Default (mobile) width
   height: auto;
-  margin-left: 9rem;
-  margin-top: -7.6rem;
+  margin-left: 5rem;
+  margin-top: -2.75rem;
   
 
   &:hover {
@@ -19,6 +19,13 @@ const ButtonContainer = styled.div`
 
   &:active {
     transform: translateY(2px);
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    width: 55rem;  // Larger width for tablet and up
+    height: auto;
+    margin-left: 9rem;
+    margin-top: -7.6rem;
   }
 `
 
@@ -48,8 +55,6 @@ const Tooltip = styled.div`
 const CopyButton = ({ 
   imageSrc, 
   textToCopy, 
-  width = '55rem', 
-  height = 'auto',
   tooltipText = 'Copied!'
 }) => {
   const [showTooltip, setShowTooltip] = useState(false)
@@ -67,7 +72,6 @@ const CopyButton = ({
   return (
     <ButtonContainer 
       onClick={handleClick}
-      style={{ width, height }}
     >
       <ButtonImage src={imageSrc} alt="Copy button" />
       <Tooltip visible={showTooltip}>{tooltipText}</Tooltip>
