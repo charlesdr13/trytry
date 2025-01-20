@@ -13,7 +13,7 @@ import rectangleBG2Left from '../assets/images/RectangleBG3Left.png'
 import rectangleBG2Right from '../assets/images/RectangleBG3Right.png'
 import woodBG from '../assets/images/woodBG.png'
 import redDiv from '../assets/images/redDivider.svg'
-import agentImage from '../assets/images/agentImage.png'
+import agentImage from '../assets/images/agentImage2.png'
 import Button from '../components/Button'
 import flagDiv from '../assets/images/flagDivider.svg'
 import TokenomicsBG from '../assets/images/TokenomicsBG.svg'
@@ -54,6 +54,10 @@ const GradientBackground = styled.div`
     max-width: 100%;
     padding: 2rem;
     height: 110%;
+  }
+  
+  @media ${QUERIES.IP11AndDown} {
+    height: 10;
   }
 `
 
@@ -225,9 +229,15 @@ const ImageContainerRectangleLeft = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '200px'};
     margin-top: -12rem;
-    margin-left: -24.5rem;
+    margin-left: -21vw;
     width: 14%;
     z-index: 6;
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: -4vw;
+    width: 13%;
+    margin-top: -6.8vh;
   }
 `
 const ImageContainerRectangleRight = styled.div`
@@ -253,6 +263,12 @@ const ImageContainerRectangleRight = styled.div`
     width: 14.8%;
     z-index: 6;
     ${typography.Arimo}
+  }
+  
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: 84vw;
+    width: 14%;
+    margin-top: -5.2vh;
   }
 `
 
@@ -405,7 +421,8 @@ const WoodBackground = styled.div`
   position: absolute;
   top: 93rem;
   left: 0;
-  width: 120%;
+  width: 100%;
+  height: 20rem;
   z-index: 0;
 
   img {
@@ -445,6 +462,10 @@ const RedDivider = styled.div`
     margin-top: 10rem;
     width: 150rem;
     z-index: 3;
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+  margin-top: 8vh;
   }
 `
 const GradientBackground2 = styled.div`
@@ -597,6 +618,10 @@ const ButtonHome = styled(Button)`
     font-size: 2rem;
     
   }
+
+  @media ${QUERIES.IP11AndDown} {
+  margin-left: 21vw;
+}
 `
 
 const FlagDivider = styled.div`
@@ -625,7 +650,7 @@ const FlagDivider = styled.div`
 `
 
 const TokenomicsBackground = styled.div`
-  width: 52rem;
+  width: 29.7rem;
   height: 124rem;
   margin-left: -1rem;
   margin-top: -11rem;
@@ -646,6 +671,10 @@ const TokenomicsBackground = styled.div`
     width: 121rem;
     margin-left: -25rem;
     margin-top: -17rem;
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+  width: 100%;
   }
 `
 const TokenomicsSection = styled.section`
@@ -691,7 +720,7 @@ const TokenomicsSection = styled.section`
         position: absolute;
         z-index: 5;
         color: #F20505;
-        font-size: 2.5rem;  
+        font-size: rem;  
         font-weight: bold;
         margin-top: 7rem;
         margin-bottom: 1rem;
@@ -791,7 +820,7 @@ const TokenomicsSection = styled.section`
       0 2px 0 #000,
       0 3px 2px rgba(0,0,0,0.3); 
       ${typography.AnonymousPro}
-  }
+    }
 
     .liquidity {
       position: absolute;
@@ -802,7 +831,7 @@ const TokenomicsSection = styled.section`
       margin-top: 16.5rem;
       margin-bottom: 1rem;
       margin-left: 7.5rem;
-  }
+    }
 
     .agents {
       position: absolute;
@@ -864,7 +893,118 @@ const TokenomicsSection = styled.section`
       margin-top: 47.5rem;
       margin-left: 39.5rem;
     }
-    
+}
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-bottom: 2rem;
+    background: transparent;
+    z-index: 3;
+    h2 {
+      position: relative;
+      z-index: 5;
+      color: #fff;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-top: -4rem;
+      margin-bottom: 1rem;
+      margin-left: 3rem;
+      -webkit-text-stroke: 2px black;
+      text-shadow: 
+        0 4px 0 #000,
+        0 5px 0 #000,
+        0 6px 2px rgba(0,0,0,0.3); 
+        ${typography.AnonymousPro}
+    }
+
+    h3 {
+      position: relative;
+      z-index: 5;
+      color: #F20505;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-top: 6rem;
+      margin-bottom: 1rem;
+      margin-left: 0vw;
+      text-align: center;
+          -webkit-text-stroke: 0.08rem black;
+      text-shadow: 
+        0 4px 0 #000,
+        0 5px 0 #000,
+        0 6px 2px rgba(0,0,0,0.3); 
+        ${typography.AnonymousPro}
+    }
+    .liquidity {
+          position: absolute;
+          z-index: 5;
+          color: #F20505;
+          font-size: 2.5rem;  
+          font-weight: bold;
+          margin-top: 6.5rem;
+          margin-bottom: 1rem;
+          margin-left: 8rem;
+      }
+
+    .agents {
+          position: absolute;
+          z-index: 5;
+          color: #F20505;
+          font-size: 2.5rem;  
+          font-weight: bold;
+          margin-left: 9rem;
+          margin-top: 19.75rem;
+        }
+
+    .addresses1 {
+          position: absolute;
+          z-index: 5;
+          color: #F20505;
+          font-size: 2.5rem;  
+          font-weight: bold;
+          margin-left: 8.25rem;
+          margin-top: 30rem;
+        }
+
+    .treasury {
+          position: absolute;
+          z-index: 5;
+          color: #F20505;
+          font-size: 2.5rem;  
+          font-weight: bold;
+          margin-top: 43rem;
+          margin-left: 9rem;
+        }
+
+    .addresses2 {
+          position: absolute;
+          z-index: 5;
+          color: #F20505;
+          font-size: 2.5rem;  
+          font-weight: bold;
+          margin-top: 53rem;
+          margin-left: 8.3rem;
+
+        }
+
+    .marketing {
+          position: absolute;
+          z-index: 5;
+          color: #F20505;
+          font-size: 2.5rem;  
+          font-weight: bold;
+          margin-top: 66rem;
+          margin-left: 8rem;
+        }
+
+    .addresses3 {
+          position: absolute;
+          z-index: 5;
+          color: #F20505;
+          font-size: 2.5rem;  
+          font-weight: bold;
+          margin-top: 76.5rem;
+          margin-left: 8rem;
+        }
+}
 `
 
 const ButtonToken = styled.div`
@@ -903,6 +1043,12 @@ const ButtonToken = styled.div`
     margin-left: 6.75rem;
   }
 
+  @media ${QUERIES.IP11AndDown} {
+    margin-top: -29.5vh;
+    margin-left: 21vw;
+
+  }
+
 `
 const ButtonToken2 = styled(Button)`
   position: relative;
@@ -917,6 +1063,10 @@ const ButtonToken2 = styled(Button)`
       margin-top: -11rem;
       margin-left: 7rem;
   }
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: 21vw;
+  }
+  
 `
 const ButtonToken3 = styled.div`
   // Original ButtonToken3 styles
@@ -956,6 +1106,10 @@ const ButtonToken3 = styled.div`
       width: 23rem;
       font-size: 2rem;
   }
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: 18vw;
+    margin-top:-29.5vh;
+  }
 `
 const ButtonToken4 = styled(Button)`
   position: relative;
@@ -969,6 +1123,11 @@ const ButtonToken4 = styled(Button)`
   @media ${QUERIES.tabletAndUp} {
     margin-top: -11rem;
     margin-left: 39.5rem;
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: 22vw;
+    margin-top: -13.5vh;
   }
 `
 const ButtonToken5 = styled.div`
@@ -1005,6 +1164,11 @@ const ButtonToken5 = styled.div`
   @media ${QUERIES.tabletAndUp} {
   margin-top: -23rem;
   margin-left: 4.5rem;
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: 10vw;
+    margin-top: -29.5vh;
   }
   
 `
@@ -1061,6 +1225,11 @@ const ButtonToken7 = styled.div`
     margin-left: 36.5rem;
   }
   
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: 10vw;
+    margin-top: -29.5vh;
+  }
+  
 `
 const ButtonToken8 = styled(Button)`
   position: relative;
@@ -1078,6 +1247,10 @@ const ButtonToken8 = styled(Button)`
     padding: 1.5rem 1rem;
     font-size: 2rem;
 
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-top: -13.5vh;
   }
 `
 const PlaqueBG1 = styled.div`
@@ -1206,6 +1379,10 @@ const BlueDivider = styled.div`
     margin-left: -30rem;
     margin-top: 12.5rem;
     width: 150rem;
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-top: 22vh;
   }
 `
 const GradientBackground3 = styled.div`

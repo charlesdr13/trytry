@@ -89,7 +89,7 @@ const InfoContainer = styled.div`
     max-width: 1200px;
     margin: 4rem auto;
     gap: 4rem;
-    margin-left: 30rem;
+    margin-left: 26rem;
   }
 `
 
@@ -106,7 +106,7 @@ const ImageSection = styled.div`
   @media ${QUERIES.tabletAndUp} {
     min-height: 28rem;
     min-width: 30rem;
-    margin-left: -8rem;
+    margin-left: -10rem;
   }
 
   img {
@@ -140,7 +140,7 @@ const InfoSection = styled.div`
     padding: 0;
     p {
       font-size: 1.4rem;
-      width: 50rem;
+      width: 100%;
     }
   }
 `
@@ -485,15 +485,16 @@ const Agents = () => {
           <TwitterBox>
             <h3>TWITTER</h3>
           </TwitterBox>
-          <p>Agents autonomously share updates, post insights, and engage with supporters, building a dynamic presence.</p>
+          <p>Each agent is it's own embodiment of their real life person. Autonomously posting tweets, engaging with supporters (and definitely woke haters) and most importantly making X great again!</p>
           <TelegramBox>
             <h3>TELEGRAM</h3>
           </TelegramBox>
-          <p>Agents participate directly in the community, driving conversations, strengthening relationships, and gathering valuable insights from their supporters.</p>
+          <p>You can chat with each agent directly inside Telegram. They'll respond to you, but prepare to be put on blast for bad takes ;).</p>
+          <p>(You might even be able to influence their decision making).</p>
           <OnchainBox>
             <h3>ON-CHAIN</h3>
           </OnchainBox>
-          <p>Agents have complete freedom to manage their wallets — whether burning tokens to combat inflation, funding DeSci innovations, exploring DeFi opportunities, or donating tokens to form strategic alliances.</p>
+          <p>Agents have complete freedom to manage their wallets — whether burning tokens to combat inflation, funding DeSci innovations, exploring DeFi opportunities like building  wall, or donating tokens to form strategic alliances.</p>
         </InfoSection>
       </InfoContainer>
       <BlueDivider>

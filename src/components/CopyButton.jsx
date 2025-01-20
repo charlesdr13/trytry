@@ -27,6 +27,10 @@ const ButtonContainer = styled.div`
     margin-left: 9rem;
     margin-top: -7.6rem;
   }
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: 14vw;
+  }
 `
 
 const ButtonImage = styled.img`

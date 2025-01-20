@@ -62,7 +62,7 @@ const NavLinks = styled.div`
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
   z-index: 9;  // Below the MenuButton but above other content
-  margin-left: -22rem;
+  margin-left: 0rem;
 
   @media ${QUERIES.tabletAndUp} {
     position: relative;
@@ -167,10 +167,11 @@ const BuyButton = styled(NavLink)`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    min-width: 10rem;
+    min-width: 8rem;
     margin-left: 6rem;
     margin-right: -5rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
+    width: 40%;
   }
 
   @media (max-width: 1420px) {

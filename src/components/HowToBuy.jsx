@@ -3,7 +3,7 @@ import { QUERIES } from '../constants/breakpoints'
 import { typography } from '../styles/typography'
 import getWallet from '../assets/images/getWallet.svg'
 import secureSOL from '../assets/images/secureSol.svg'
-import buyTERM2 from '../assets/images/buyTERM2.svg'
+import buyTERM2 from '../assets/images/buyTERM3.svg'
 
 const HowToBuySection = styled.section`
   color: #000;
@@ -142,7 +142,7 @@ const StepsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   @media ${QUERIES.tabletAndUp} {
     grid-template-columns: repeat(3, 1fr);

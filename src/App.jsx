@@ -6,11 +6,24 @@ import Agents from './pages/Agents'
 import Header from './components/Header'
 import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    width: 100vw;
+    max-width: 100vw;
+  }
+`
 
 const AppContainer = styled.div`
   background-color: #E5E5E5;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden !important;
 `
 
 function App() {
@@ -24,17 +37,20 @@ function App() {
   };
 
   return (
-    <Router>
-      <ScrollToTop />
-      <PageTransition isNavigating={isNavigating} />
-      <AppContainer>
-        <Header onNavigate={handleNavigation} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/agents" element={<Agents />} />
-        </Routes>
-      </AppContainer>
-    </Router>
+    <>
+      <GlobalStyle />
+      <Router>
+        <ScrollToTop />
+        <PageTransition isNavigating={isNavigating} />
+        <AppContainer>
+          <Header onNavigate={handleNavigation} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/agents" element={<Agents />} />
+          </Routes>
+        </AppContainer>
+      </Router>
+    </>
   )
 }
 
