@@ -4,7 +4,7 @@ import HowToBuy from '../components/HowToBuy'
 import FAQ from '../components/FAQ'
 import Footer from '../components/Footer'
 import { typography } from '../styles/typography'
-import landingImageBack from '../assets/images/LandingPageBack.png'
+import landingImageBack from '../assets/images/landingPageBack.png'
 import landingImageFront from '../assets/images/LandingPageFront2.png' 
 import goals from '../assets/images/goals2.png'
 import term2Front from '../assets/images/term2Front.png'
@@ -127,9 +127,8 @@ const ImageContainerBack = styled.div`
   position: relative;
   overflow: hidden;
   margin-left: -2.681%;
-  
 
-  video {
+  video, img {
     width: 110%;
     height: 140%;
     object-fit: cover;
@@ -1462,6 +1461,8 @@ const Home = () => {
     return !sessionStorage.getItem('navigationState');
   });
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 415);
+
   useEffect(() => {
     if (showLoading) {
       // Set navigation state to prevent loading screen on internal navigation
@@ -1477,6 +1478,15 @@ const Home = () => {
       };
     }
   }, [showLoading]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 415);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Clear navigation state on page refresh
   useEffect(() => {
@@ -1499,15 +1509,14 @@ const Home = () => {
           src={term2Front} 
           alt="TERM2"
           />
-          <ImageContainerBack height="100%" margin-top="-20rem">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src={globe} type="video/webm" />
-            </video>
+          <ImageContainerBack height="100%">
+            {isMobile ? (
+              <img src={landingImageBack} style={{width: '100%', height: '100%', marginLeft: '2vw'}} alt="Background" />
+            ) : (
+              <video autoPlay muted loop playsInline>
+                <source src={globe} type="video/webm" />
+              </video>
+            )}
           </ImageContainerBack>
           <ImageContainerFront height="100%" margin-top="-20rem">
             <img src={landingImageFront} alt="Image of Globe" />
