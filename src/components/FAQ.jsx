@@ -7,35 +7,55 @@ import trumpFAQImage from '../assets/images/TrumpFaq.svg'
 const FAQSection = styled.section`
   width: 100%;
   padding: 2rem 1rem;
-  margin-left: -10rem;
+  margin-left: 0;
   margin-top: -3rem;
   position: relative;
   z-index: 5;
   margin-bottom: -100;
 
+  @media ${QUERIES.tabletAndUp} {
+    margin-left: -10rem;
+  }
 `
 
 const FAQTitle = styled.h2`
   color: #FF2727;
-  font-size: 8rem;
+  font-size: 5rem;
   font-weight: 700;
-  letter-spacing: -0.4rem;
+  letter-spacing: -0.2rem;
   margin-bottom: 2rem;
+  text-align: center;
   -webkit-text-stroke: 2px black;
   text-shadow: 
     0 4px 0 #000,
     0 5px 0 #000,
     0 6px 2px rgba(0,0,0,0.3);
   ${typography.AnonymousPro}
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 8rem;
+    letter-spacing: -0.4rem;
+    text-align: left;
+  }
 `
 
 const FAQContainer = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  max-width: 50rem;
-  margin: 0 auto;
-  margin-left: 0rem;
+  max-width: 100%;
+  margin: 0 1rem;
+    left: 50%;
+    transform: translateX(-50%);
   position: relative;
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    max-width: 50rem;
+    margin-left: 0rem;
+    left: 0%;
+    transform: translateX(0%);
+  }
 `
 
 const QuestionsContainer = styled.div`
@@ -43,6 +63,7 @@ const QuestionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  width: 100%;
 `
 
 const QuestionBox = styled.div`
@@ -59,22 +80,36 @@ const QuestionBox = styled.div`
   position: relative;
   z-index: 4;
   overflow: visible;
-  min-width: 50rem;
+  width: calc(100% - 2rem);
+  min-width: auto;
+
+  @media ${QUERIES.tabletAndUp} {
+    min-width: 50rem;
+  }
 
   h3 {
     color: #333;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: -0.025rem;
     margin-bottom: ${props => props.isOpen ? '1rem' : '0'};
     ${typography.AnonymousPro}
+
+    @media ${QUERIES.tabletAndUp} {
+      font-size: 1.5rem;
+    }
   }
 
   p {
     display: ${props => props.isOpen ? 'block' : 'none'};
     color: #666;
     line-height: 1.6;
+    font-size: 1.2rem;
     ${typography.Arimo}
+
+    @media ${QUERIES.tabletAndUp} {
+      font-size: 1.4rem;
+    }
   }
 
   &:hover {
@@ -84,17 +119,25 @@ const QuestionBox = styled.div`
 `
 
 const ImageContainer = styled.div`
-  position: relative;
-  z-index: 8;
-  margin-left: 7rem;
-  margin-top: -2rem;
-  width: 47rem;
-  height: auto;
-  min-width: 48rem;
+    width: 20rem;
+    height: auto;
+    margin-left: 7rem;
+    margin-bottom: -5rem;
+  @media ${QUERIES.tabletAndUp} {
+    display: block;
+    position: relative;
+    z-index: 8;
+    margin-left: 7rem;
+    margin-top: -2rem;
+    width: 47rem;
+    height: auto;
+    min-width: 48rem;
+    margin-bottom: 0rem;
 
-  img {
-    width: 100%;
-    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 `
 

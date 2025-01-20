@@ -54,16 +54,17 @@ const NavLinks = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: #E5E5E5;
+  background: #000520;  // Changed to match nav background
   display: flex;
   flex-direction: column;
-  padding: 6rem 2rem;
-  gap: 3rem;
+  padding: 8rem 2rem;  // Increased top padding
+  gap: 3.5rem;  // Increased gap between links
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
-  z-index: 10;
+  z-index: 9;  // Below the MenuButton but above other content
+  margin-left: -22rem;
 
-  @media ${QUERIES.tabletAndUp} {;
+  @media ${QUERIES.tabletAndUp} {
     position: relative;
     gap: 4rem;
     flex: 3;
@@ -75,6 +76,7 @@ const NavLinks = styled.div`
     transform: none;
     align-items: center;
     background: none;
+    margin-left: 0rem;
   }
 
   @media (max-width: 1200px) {
@@ -96,7 +98,9 @@ const MenuButton = styled.button`
   padding: 0.5rem;
   cursor: pointer;
   font-size: 2.5rem;
-  z-index: 2;
+  z-index: 10;  // Increased to stay above NavLinks
+  color: white;
+  position: relative;  // Added for z-index to work
 
   @media ${QUERIES.tabletAndUp} {
     display: none;
@@ -104,15 +108,25 @@ const MenuButton = styled.button`
 `
 
 const NavLink = styled(Link)`
-  color: #8A8A8A;
+  color: white;  // Changed to white for better visibility
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;  // Increased font size for mobile
   font-weight: 700;
   transition: color 0.2s ease;
   text-align: center;
   ${typography.AnonymousPro}
+  
   &:hover {
-    color: #646464;
+    color: #8A8A8A;  // Lighter hover color
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    color: #8A8A8A;
+    font-size: 1.5rem;
+    
+    &:hover {
+      color: #646464;
+    }
   }
 
   @media (max-width: 1320px) {
@@ -134,28 +148,29 @@ const NavLink = styled(Link)`
 
 const BuyButton = styled(NavLink)`
   background: #1E3B8D;
+  position: relative;
   color: white !important;
-  border-top: 2px solid white;    // White top border
-  border-left: 2px solid white;   // White left border
-  border-bottom: 2px solid #0A2472; // Darker blue bottom border
-  border-right: 2px solid #0A2472;  // Darker blue right border
-  padding: 0.5rem 1.5rem;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-bottom: 2px solid #0A2472;
+  border-right: 2px solid #0A2472;
+  padding: 1rem 2rem;  // Increased padding for better touch target
   border-radius: 2px;
-  min-width: 10rem;
+  width: 97%;  // Increased minimum width
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-left: 20rem;
 
-
-  
   &:hover {
-    background: #2a4dad;  // Slightly lighter blue on hover
+    background: #2a4dad;
     transform: translateY(1px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.tabletAndUp} {
     min-width: 10rem;
     margin-left: 6rem;
     margin-right: -5rem;
+    padding: 0.5rem 1.5rem;
   }
 
   @media (max-width: 1420px) {

@@ -13,10 +13,13 @@ const HowToBuySection = styled.section`
   z-index: 3;
   h2 {
     position: relative;
+    width: 30rem;
     color: #FF2727;
     z-index: 2;
-    font-size: 1rem;
+    font-size: 4.5rem;
     font-weight: bold;  
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 4rem;
     margin-bottom: 1rem;
         -webkit-text-stroke: 1.5px black;
@@ -50,13 +53,14 @@ const HowToBuySection = styled.section`
   
     h2 {
       position: relative;
+      width: 60rem;
       z-index: 2;
       font-size: 7rem;
-      margin-left: 2rem;
       margin-top: 7rem;
       margin-bottom: 2rem;
       font-weight: bold;
       letter-spacing: -0.3rem;
+
 
     }
 
@@ -146,12 +150,14 @@ const StepsContainer = styled.div`
 `
 
 const GetWalletImage = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 80%;
+  height: 100%;
   background: transparent;
   display: grid;
   position: relative;
   z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
 
   img {
     width: 100%;
@@ -165,15 +171,19 @@ const GetWalletImage = styled.div`
     margin: 0.5rem auto;
     margin-top: 2rem;
     margin-left: -13rem;
+    left: 0%;
+    transform: translateX(0%);
   }
 `
 const SecureSOLImage = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 80%;
+  height: 100%;
   background: transparent;
   display: grid;
   position: relative;
   z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
 
   img {
     width: 100%;
@@ -187,16 +197,20 @@ const SecureSOLImage = styled.div`
     margin: 0.5rem auto;
     margin-top: 2rem;
     margin-left: 0rem;
+    left: 0%;
+    transform: translateX(0%);
   }
 `
 
 const BuyTERM2Image = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 80%;
+  height: 100%;
   background: transparent;
   display: grid;
   position: relative;
   z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
 
   img {
     width: 100%;

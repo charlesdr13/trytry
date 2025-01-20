@@ -4,11 +4,11 @@ import Button from '../components/Button'
 import xIcon from '../assets/images/twitterIcon.svg'
 import telegramIcon from '../assets/images/telegramIcon.svg'
 import walletLogo from '../assets/images/walletLogo.svg'
-
+import { QUERIES } from '../constants/breakpoints'
 
 const CardWrapper = styled.div`
   background: #001F50;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 4px;
   border-top: 0.3rem solid #6591FF;    
   border-left: 0.3rem solid #6591FF;   
@@ -16,14 +16,23 @@ const CardWrapper = styled.div`
   border-right: 0.3rem solid #020424;  
   color: white;
   width: 100%;
-  max-width: 1260px;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
-  min-height: ${props => props.isComingSoon ? '20rem' : '400px'};
-  height: ${props => props.isComingSoon ? '20rem' : 'auto'};
+  min-height: ${props => props.isComingSoon ? '15rem' : '300px'};
+  height: auto;
   display: flex;
+  flex-direction: column;
   overflow: visible;
-  margin-bottom: -2rem;
+  margin-bottom: -4rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding: 2rem;
+    max-width: 1260px;
+    min-height: ${props => props.isComingSoon ? '20rem' : '400px'};
+    flex-direction: row;
+    margin-bottom: -2rem;
+  }
 `
 
 const CardHeader = styled.div`
@@ -45,16 +54,21 @@ const LeftSection = styled.div`
 
 const AgentBadge = styled.div`
   position: relative;
-  width: 25rem;
+  width: 18rem;
   height: auto;
-  position: relative;
-  margin-top: ${props => props.isComingSoon ? '0rem' : '-7rem'};
-  margin-left: 9rem;
+  margin-top: ${props => props.isComingSoon ? '0rem' : '-5rem'};
+  margin-left: 2rem;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    width: 25rem;
+    margin-top: ${props => props.isComingSoon ? '0rem' : '-7rem'};
+    margin-left: 9rem;
   }
 `
 
@@ -71,13 +85,20 @@ const AgentName = styled(Button)`
   font-size: 1.7rem;
   font-weight: 700;
   min-height: 1rem;
-  margin-left: 9.3rem;
+  margin-left: -2rem;
+  margin-top: 8rem;
   ${typography.AnonymousPro}
   position: absolute;
-  bottom: ${props => props.isComingSoon ? '4rem' : '-0.1rem'};
+  bottom: ${props => props.isComingSoon ? '-6rem' : '-4rem'};
   left: 19%;
   transform: translateY(-3%);
   white-space: nowrap;
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: 0rem;
+    margin-left: 9.3rem;
+    bottom: ${props => props.isComingSoon ? '4rem' : '-0.1rem'};
+  }
 `
 
 const RightSection = styled.div`
@@ -93,8 +114,8 @@ const WalletSection = styled.div`
   align-items: center;
   gap: 1rem;
   z-index: 2;
-  margin-top: -0.8rem;
-  margin-left: 9rem;
+  margin-top: 8em;
+  margin-left: 4.5rem;
   img {
     height: 2.5
     rem;
@@ -103,16 +124,36 @@ const WalletSection = styled.div`
   
   span {
     color: #666;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    margin-top: -5rem;
+    margin-left: -16rem;
     ${typography.AnonymousPro}
     font-weight: 700;
 
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-left: 9rem;
+    margin-top: -0.8rem;
+    
+
+    span {
+      margin-top: 0rem;
+      margin-left: 0.5rem;
+      font-size: 1.1rem;
+    }
   }
 `
 
 const SocialLinks = styled.div`
   display: flex;
   gap: 1rem;
+  margin-left: -12rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 1rem;
+    margin-left: 0rem;
+  }
 `
 
 const SocialIcon = styled.div`
@@ -123,12 +164,17 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 9.3rem;
-  width: 48px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
 
   img {
     width: 128px;
     height: 128px;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    width: 48px;
+    height: 48px;
   }
 `
 
@@ -147,17 +193,23 @@ const SocialLink = styled.a`
 `
 
 const AgentDescription = styled.p`
-  font-size: 19.12px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
   color: #B3B7C7;
-  margin-left: 9.5rem;
-  width: 34rem;
+  margin-left: 1rem;
+  width: 100%;
   ${typography.Arimo}
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 19.12px;
+    margin-left: 9.5rem;
+    width: 34rem;
+  }
 `
 
 const Capabilities = styled.div`
   margin-top: -2rem;
-  margin-left: 9.5rem;
+  margin-left: 0rem;
   h3 {
     color: #FF0000;
     font-size: 1.7rem;
@@ -170,11 +222,16 @@ const Capabilities = styled.div`
     margin-bottom: 0.7rem;
     ${typography.AnonymousPro}
   }
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: -2rem;
+    margin-left: 9.5rem;
+  }
 `
 
 const CapabilitiesGrid = styled.div`
   display: flex;
-  gap: 4rem;
+  gap: 1.5rem;
   
   div {
     display: flex;
@@ -189,6 +246,10 @@ const CapabilitiesGrid = styled.div`
       ${typography.AnonymousPro}
     }
   }
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 4rem;
+  }
 `
 
 const StatusBadge = styled.span`
@@ -199,12 +260,17 @@ const StatusBadge = styled.span`
   color: white;
   padding: 0.5rem 0.8rem;
   border-radius: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   min-height: 2rem;
   min-width: 0.5rem;
+  align-items: center;
   ${typography.AnonymousPro}
   text-transform: lowercase;
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 1.2rem;
+  }
 `
 
 const AgentCard = ({ agent }) => {

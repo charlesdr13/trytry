@@ -5,8 +5,8 @@ import FAQ from '../components/FAQ'
 import Footer from '../components/Footer'
 import { typography } from '../styles/typography'
 import landingImageBack from '../assets/images/LandingPageBack.png'
-import landingImageFront from '../assets/images/LandingPageFront.png' 
-import goals from '../assets/images/goals.svg'
+import landingImageFront from '../assets/images/LandingPageFront2.png' 
+import goals from '../assets/images/goals2.png'
 import term2Front from '../assets/images/term2Front.png'
 import rectangleBG2 from '../assets/images/RectangleBG3.svg'
 import rectangleBG2Left from '../assets/images/RectangleBG3Left.png'
@@ -46,14 +46,14 @@ const GradientBackground = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 60%;  // Adjust this value to control how far down the gradient goes
+  height: 70%;  // Adjust this value to control how far down the gradient goes
   background: linear-gradient(180deg, #8EEAFF 0%, #FFFFFF 100%);
-  z-index: -0;
+  z-index: 0;
 
   @media ${QUERIES.tabletAndUp} {
     max-width: 100%;
     padding: 2rem;
-    height: 100%;
+    height: 110%;
   }
 `
 
@@ -64,6 +64,7 @@ const Hero = styled.section`
   margin-top: 5rem;
   background: transparent;
   
+  
   h2 {
     position: relative;
     -webkit-text-stroke: 0.8px black;
@@ -72,10 +73,10 @@ const Hero = styled.section`
       0 3px 0 #000,
       0 4px 2px rgba(0,0,0,0.3); 
 
-    z-index: 2;
+    z-index: 4;
     font-size: 1rem;
-    margin-top: -2rem;
-    margin-bottom: -3rem;
+    margin-top: -1.66%;
+    margin-bottom: -11%;
     font-weight: 10000;
     ${typography.AnonymousPro}
   }
@@ -86,7 +87,7 @@ const Hero = styled.section`
     
     h2 {
       position: relative;
-      z-index: 2;
+      z-index: 4;
       font-size: 2.6rem;
       margin-bottom: -2.5rem;
       font-weight: 10000;
@@ -103,7 +104,7 @@ const CenteredImage = styled.img`
   margin: 0 auto;      // Centers the image horizontally
   margin-top: 4rem;
   position: relative;
-  z-index: 2;
+  z-index: 4;
   
   @media ${QUERIES.tabletAndUp} {
     width: 70%;        // Adjust for larger screens if needed
@@ -118,10 +119,10 @@ const ImageContainerBack = styled.div`
   width: 100%;
   height: ${props => props.height || '200px'};
   background: transparent;
-  z-index: 1;
+  z-index: 3;
   position: relative;
   overflow: hidden;
-  margin-left: -0.7rem;
+  margin-left: -2.681%;
   
 
   video {
@@ -145,9 +146,9 @@ const ImageContainerFront = styled.div`
   width: 100%;
   height: 100%; 
   background: transparent;
-  z-index: 3;
-  margin-top: -20rem;
-  margin-left: 0.75rem;
+  z-index: 4;
+  margin-top: -76.6%;
+  margin-left: 2.8725%;
 
   img {
     width: 100%;
@@ -158,7 +159,7 @@ const ImageContainerFront = styled.div`
   @media ${QUERIES.tabletAndUp} {
     margin: 2rem auto;
     margin-top: -43rem;
-    z-index: 3;
+    z-index: 4;
   }
 `
 const ImageContainer = styled.div`
@@ -185,8 +186,8 @@ const ImageContainerRectangle = styled.div`
   position: relative;
   left: 0%;
   display: flex;
-  margin-top: -2.8rem;
-  margin-left: -1rem;
+  margin-top: -10.724%;
+  margin-left: -3.83%;
   z-index: 5;
   width: 50rem;
 
@@ -199,9 +200,9 @@ const ImageContainerRectangle = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '300px'};
     margin-left: -24.8rem;
-    margin-top: -4.8rem;
+    margin-top: -9rem;
     width: 138rem;
-    z-index: 3;
+    z-index: 5;
   }
 `
 const ImageContainerRectangleLeft = styled.div`
@@ -211,8 +212,8 @@ const ImageContainerRectangleLeft = styled.div`
   position: relative;
   left: 0%;
   display: flex;
-  margin-left: -1rem;
-  margin-top: -4.3rem;
+  margin-left: -3.83%;
+  margin-top: -15.2%;
   z-index: 6;
 
   img {
@@ -226,7 +227,7 @@ const ImageContainerRectangleLeft = styled.div`
     margin-top: -12rem;
     margin-left: -24.5rem;
     width: 14%;
-    z-index: 4;
+    z-index: 6;
   }
 `
 const ImageContainerRectangleRight = styled.div`
@@ -235,7 +236,7 @@ const ImageContainerRectangleRight = styled.div`
   background: transparent;
   position: relative;
   display: flex;
-  margin-top: -3.25rem;
+  margin-top: -11.4%;
   margin-left: 26rem;
   z-index: 6;
   
@@ -250,7 +251,7 @@ const ImageContainerRectangleRight = styled.div`
     margin-top: -9.1rem;
     margin-left: 85rem;
     width: 14.8%;
-    z-index: 3;
+    z-index: 6;
     ${typography.Arimo}
   }
 `
@@ -274,7 +275,6 @@ const ImageContainerCopyBar = styled.div`
     height: ${props => props.height || '200px'};
     margin-top: -2rem;
     z-index: 4;
-    
   }
 `
 
@@ -398,7 +398,7 @@ const GoalMap = styled.div`
     height: ${props => props.height || '1000px'};
     width: 80rem;
     margin-left: -8rem;
-    margin-top: -6rem;
+    margin-top: 2rem;
   }
 `
 const WoodBackground = styled.div`
@@ -442,7 +442,7 @@ const RedDivider = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '50px'};
     margin-left: -30rem;
-    margin-top: 12rem;
+    margin-top: 10rem;
     width: 150rem;
     z-index: 3;
   }
@@ -626,12 +626,13 @@ const FlagDivider = styled.div`
 
 const TokenomicsBackground = styled.div`
   width: 52rem;
-  height: 80rem;
+  height: 124rem;
   margin-left: -1rem;
   margin-top: -11rem;
   background: transparent;
-  z-index: 1;
+  z-index: 0;
   position: absolute;
+  overflow: hidden;
 
   
   img {
@@ -641,7 +642,7 @@ const TokenomicsBackground = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: 88rem;
+    height: 97rem;
     width: 121rem;
     margin-left: -25rem;
     margin-top: -17rem;
@@ -673,17 +674,90 @@ const TokenomicsSection = styled.section`
     position: relative;
     z-index: 5;
     color: #F20505;
-    font-size: 1rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-top: 4rem;
+    margin-top: 6rem;
     margin-bottom: 1rem;
-        -webkit-text-stroke: 2px black;
+    margin-left: 0vw;
+    text-align: center;
+        -webkit-text-stroke: 0.08rem black;
     text-shadow: 
       0 4px 0 #000,
       0 5px 0 #000,
       0 6px 2px rgba(0,0,0,0.3); 
       ${typography.AnonymousPro}
   }
+  .liquidity {
+        position: absolute;
+        z-index: 5;
+        color: #F20505;
+        font-size: 2.5rem;  
+        font-weight: bold;
+        margin-top: 7rem;
+        margin-bottom: 1rem;
+        margin-left: 8.5rem;
+    }
+
+  .agents {
+        position: absolute;
+        z-index: 5;
+        color: #F20505;
+        font-size: 2.5rem;  
+        font-weight: bold;
+        margin-left: 9rem;
+        margin-top: 20.6rem;
+      }
+
+  .addresses1 {
+        position: absolute;
+        z-index: 5;
+        color: #F20505;
+        font-size: 2.5rem;  
+        font-weight: bold;
+        margin-left: 8.25rem;
+        margin-top: 31rem;
+      }
+
+  .treasury {
+        position: absolute;
+        z-index: 5;
+        color: #F20505;
+        font-size: 2.5rem;  
+        font-weight: bold;
+        margin-top: 44.5rem;
+        margin-left: 9rem;
+      }
+
+  .addresses2 {
+        position: absolute;
+        z-index: 5;
+        color: #F20505;
+        font-size: 2.5rem;  
+        font-weight: bold;
+        margin-top: 55rem;
+        margin-left: 8.3rem;
+
+      }
+
+  .marketing {
+        position: absolute;
+        z-index: 5;
+        color: #F20505;
+        font-size: 2.5rem;  
+        font-weight: bold;
+        margin-top: 68.75rem;
+        margin-left: 8rem;
+      }
+
+  .addresses3 {
+        position: absolute;
+        z-index: 5;
+        color: #F20505;
+        font-size: 2.5rem;  
+        font-weight: bold;
+        margin-top: 79rem;
+        margin-left: 8rem;
+      }
 
   @media ${QUERIES.tabletAndUp} {
     margin-bottom: 4rem;
@@ -737,6 +811,7 @@ const TokenomicsSection = styled.section`
       font-size: 3rem;  
       font-weight: bold;
       margin-left: 40.5rem;
+      margin-top: 5rem;
     }
 
     .addresses1 {
@@ -789,14 +864,15 @@ const TokenomicsSection = styled.section`
       margin-top: 47.5rem;
       margin-left: 39.5rem;
     }
+    
 `
 
 const ButtonToken = styled.div`
   // Original ButtonToken styles
   position: relative;
   margin: 2rem auto;
-  margin-top: -23rem;
-  margin-left: 7rem;
+  margin-top: -19.75rem;
+  margin-left: 6.75rem;
   position: absolute;
   z-index: 5;
   padding: 1rem rem;
@@ -822,25 +898,36 @@ const ButtonToken = styled.div`
   z-index: 6;
   ${typography.AnonymousPro}
 
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: -23rem;
+    margin-left: 6.75rem;
+  }
+
 `
 const ButtonToken2 = styled(Button)`
   position: relative;
   margin: 2rem auto;
-  margin-top: -11rem;
+  margin-top: -9rem;
   margin-left: 7rem;
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
+
+  @media ${QUERIES.tabletAndUp} {
+      margin-top: -11rem;
+      margin-left: 7rem;
+  }
 `
 const ButtonToken3 = styled.div`
   // Original ButtonToken3 styles
   position: relative;
   margin: 2rem auto;
-  margin-top: -23rem;
-  margin-left: 36rem;
+  margin-top: -19.5rem;
+  margin-left: 5rem;
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
+  width: 60%;
 
   // Inherited Button styles
   background: #2734BD;
@@ -858,26 +945,38 @@ const ButtonToken3 = styled.div`
   text-align: center;
   font-weight: bold;
   padding: 1.75rem 1.3rem;
-  font-size: 2rem;
+  font-size: 1.4rem;
   transition: all 0.2s ease;
   z-index: 6;
   ${typography.AnonymousPro}
+
+  @media ${QUERIES.tabletAndUp} {
+      margin-top: -23rem;
+      margin-left: 35.5rem;
+      width: 23rem;
+      font-size: 2rem;
+  }
 `
 const ButtonToken4 = styled(Button)`
   position: relative;
   margin: 2rem auto;
-  margin-top: -11rem;
-  margin-left: 39.5rem;
+  margin-top: -9rem;
+  margin-left: 6.5rem;
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: -11rem;
+    margin-left: 39.5rem;
+  }
 `
 const ButtonToken5 = styled.div`
   // Original ButtonToken5 styles
   position: relative;
   margin: 2rem auto;
-  margin-top: -23rem;
-  margin-left: 4.5rem;
+  margin-top: -20rem;
+  margin-left: 3.75rem;
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
@@ -902,22 +1001,36 @@ const ButtonToken5 = styled.div`
   transition: all 0.2s ease;
   z-index: 6;
   ${typography.AnonymousPro}
+
+  @media ${QUERIES.tabletAndUp} {
+  margin-top: -23rem;
+  margin-left: 4.5rem;
+  }
+  
 `
 const ButtonToken6 = styled(Button)`
   position: relative;
   margin: 2rem auto;
-  margin-top: -11rem;
-  margin-left: 3.5rem;
+  margin-top: -9rem;
+  margin-left: 6.5rem;
   position: absolute;
   z-index: 5;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+
+  @media ${QUERIES.tabletAndUp} {
+  margin-top: -11rem;
+  margin-left: 3.5rem;
+    padding: 1.5rem 1rem;
+    font-size: 2rem;
+  }
 `
 const ButtonToken7 = styled.div`
   // Original ButtonToken7 styles
   position: relative;
   margin: 2rem auto;
-  margin-top: -23rem;
-  margin-left: 36.5rem;
+  margin-top: -19.75rem;
+  margin-left: 3.5rem;
   position: absolute;
   z-index: 5;
   padding: 1.5rem 1rem;
@@ -942,22 +1055,40 @@ const ButtonToken7 = styled.div`
   transition: all 0.2s ease;
   z-index: 6;
   ${typography.AnonymousPro}
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: -23rem;
+    margin-left: 36.5rem;
+  }
+  
 `
 const ButtonToken8 = styled(Button)`
   position: relative;
   margin: 2rem auto;
-  margin-top: -11rem;
-  margin-left: 35.5rem;
+  margin-top: -9.5rem;
+  margin-left: 6.5rem;
   position: absolute;
   z-index: 5;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: -11rem;
+    margin-left: 35.5rem;
+    padding: 1.5rem 1rem;
+    font-size: 2rem;
+
+  }
 `
 const PlaqueBG1 = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 85%;
+  height: 100%;
   background: transparent;
   position: relative;
   z-index: 3;
+      left: 50%;
+    transform: translateX(-50%);
+    margin-top: -5rem;
 
   img {
     width: 100%;
@@ -971,15 +1102,20 @@ const PlaqueBG1 = styled.div`
     margin: 0.5rem auto;
     margin-top: 4rem;
     margin-left: 0rem;
+    left: 0%;
+    transform: translateX(0%);
+    
   }
 `
 
 const PlaqueBG2 = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 85%;
+  height: 100%;
   background: transparent;
   position: relative;
   z-index: 3;
+      left: 50%;
+    transform: translateX(-50%);
 
   img {
     width: 100%;
@@ -993,14 +1129,18 @@ const PlaqueBG2 = styled.div`
     margin: 0.5rem auto;
     margin-top: -30rem;
     margin-left: 32rem;
+      left: 0%;
+    transform: translateX(0%);
   }
 `
 const PlaqueBG3 = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 85%;
+  height: 100%;
   background: transparent;
   position: relative;
   z-index: 3;
+      left: 50%;
+    transform: translateX(-50%);
 
   img {
     width: 100%;
@@ -1014,14 +1154,18 @@ const PlaqueBG3 = styled.div`
     margin: 0.5rem auto;
     margin-top: 0rem;
     margin-left: 0rem;
+        left: 0%;
+    transform: translateX(0%);
   }
 `
 const PlaqueBG4 = styled.div`
-  width: 100%;
-  height: ${props => props.height || '200px'};
+  width: 85%;
+  height: 100%;
   background: transparent;
   position: relative;
   z-index: 3;
+      left: 50%;
+    transform: translateX(-50%);
 
   img {
     width: 100%;
@@ -1035,16 +1179,19 @@ const PlaqueBG4 = styled.div`
     margin: 0.5rem auto;
     margin-top: -30rem;
     margin-left: 32rem;
+    left: 0%;
+    transform: translateX(0%);
   }
 `
 const BlueDivider = styled.div`
-  width: 100%;
-  height: ${props => props.height || '50px'};
+  width: 60rem;
+  height: 2.5rem;
   background: transparent;
   position: relative;
   left: 0%;
   display: flex;
   margin-top: 10rem;
+  margin-left: -2rem;
   z-index: 6;
   
 
@@ -1066,12 +1213,15 @@ const GradientBackground3 = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 60%;  // Adjust this value to control how far down the gradient goes
+  height: 102rem;  // Adjust this value to control how far down the gradient goes
   background: linear-gradient(180deg, #8EEAFF 0%, #FFFFFF 100%);
-  z-index: -0;
+  z-index: 2;
   margin-bottom: -450rem;
+  margin-top: 332rem;
 
   @media ${QUERIES.tabletAndUp} {
+    position: absolute;
+    margin-top: 0rem;
     max-width: 100%;
     padding: 2rem;
     height: 100%;
@@ -1079,15 +1229,16 @@ const GradientBackground3 = styled.div`
 `
 const WhiteBackground = styled.div`
   position: absolute;
-  top: 440rem;
+  top: 430rem;
   left: 0;
   width: 100%;
-  height: 60%;  // Adjust this value to control how far down the gradient goes
+  height: 95rem;  // Adjust this value to control how far down the gradient goes
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
-  z-index: 1;
+  z-index: 2;
 
 
   @media ${QUERIES.tabletAndUp} {
+    top: 440rem;
     max-width: 100%;
     margin-bottom: -450rem;
     padding: 2rem;
@@ -1271,7 +1422,7 @@ const Home = () => {
         </BlueDivider>
         <GradientBackground3 />
         <HowToBuy />
-        <FlagDivider style={{marginTop: '2rem'}}>
+        <FlagDivider style={{marginTop: '2rem', zIndex: '5'}}>
           <img src={flagDiv} alt="Image of Flag Divider" />
         </FlagDivider>
         <WhiteBackground />

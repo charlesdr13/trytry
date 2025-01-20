@@ -17,13 +17,17 @@ const AgentsContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   background: #FFF;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding: 4rem 2rem;
+  }
 `
 
 const Title = styled.h1`
   position: relative;
   color: #FF2727;
-  font-size: 7rem;
+  font-size: 4rem;
   text-align: center;
   justify-content: center;
   letter-spacing: -0.05em;
@@ -35,6 +39,10 @@ const Title = styled.h1`
   ${typography.AnonymousPro}
   margin-bottom: 2rem;
   z-index: 2;
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 7rem;
+  }
 `
 const GradientBackground = styled.div`
   position: absolute;
@@ -69,11 +77,20 @@ const InfoContainer = styled.div`
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 4rem auto;
-  gap: 4rem;
-  margin-left: 30rem;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  margin: 2rem auto;
+  gap: 2rem;
+  margin-left: 0;
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 4rem auto;
+    gap: 4rem;
+    margin-left: 30rem;
+  }
 `
 
 const ImageSection = styled.div`
@@ -82,9 +99,15 @@ const ImageSection = styled.div`
   z-index: 2;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  min-height: 28rem;
-  min-width: 30rem;
-  margin-left: -8rem;
+  min-height: 20rem;
+  min-width: 100%;
+  margin-left: 0;
+
+  @media ${QUERIES.tabletAndUp} {
+    min-height: 28rem;
+    min-width: 30rem;
+    margin-left: -8rem;
+  }
 
   img {
     width: 100%;
@@ -101,19 +124,25 @@ const InfoSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-
+  padding: 0 1rem;
 
   p {
     margin-top: -1rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #333;
     line-height: 1.5;
-    width: 50rem;
-    line-height: 1.7rem;
+    width: 100%;
     margin-bottom: 0rem;
     ${typography.Arimo}
   }
 
+  @media ${QUERIES.tabletAndUp} {
+    padding: 0;
+    p {
+      font-size: 1.4rem;
+      width: 50rem;
+    }
+  }
 `
 
 const TwitterBox = styled.div`
@@ -172,13 +201,14 @@ const OnchainBox = styled.div`
   }
 `
 const BlueDivider = styled.div`
-  width: 100%;
+  width: 100rem;
   height: ${props => props.height || '50px'};
   background: transparent;
   position: relative;
   left: 0%;
   display: flex;
-  margin-top: 10rem;
+  margin-top: 6rem;
+  margin-left: -2rem;
   z-index: 6;
   
 
@@ -198,10 +228,13 @@ const BlueDivider = styled.div`
 
 const AgentsBackground = styled.div`
   width: auto;
-  height: ${props => props.height || '200px'};
+  height: 482vh;
   background: transparent;
   z-index: 0;
   position: absolute;
+  margin-left: -2rem;
+  margin-top: -2rem;
+  overflow: hidden;
 
   
   img {
@@ -211,7 +244,7 @@ const AgentsBackground = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: 480vh;
+    height: 415vh;
     width: auto;
     margin-left: -2rem;
     margin-top: -1rem;
@@ -239,13 +272,14 @@ const AgentCardsGrid = styled.div`
 `
 
 const FlagDivider = styled.div`
-  width: 100%;
-  height: ${props => props.height || '50px'};
+  width: 150rem;
+  height: ${props => props.height || '350px'};
   background: transparent;
   position: relative;
   left: 0%;
   display: flex;
-  margin-top: -2.4rem;
+  margin-top: 4.25rem;
+  margin-left: -2rem;
 
   img {
     width: 85%;
@@ -256,7 +290,7 @@ const FlagDivider = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '350px'};
     margin-left: -2.5rem;
-    margin-top: 11rem;
+    margin-top: 12.25rem;
     width: 150rem;
     z-index: 3;
   }
@@ -285,6 +319,7 @@ const TrumpHotelBackground = styled.div`
   left: 0rem;
   width: 100%;
   z-index: 5;
+  margin-top: -10rem;
 
 
   img {
@@ -294,9 +329,10 @@ const TrumpHotelBackground = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    top: 590vh;
+    top: 540vh;
     height: auto;
     width: 100%;
+    margin-top: 0rem;
   }
 `
 const AgentsFAQ = styled(FAQ)`
@@ -313,17 +349,28 @@ const FAQContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding-left: 12rem;
+  padding-left: 0rem;
   margin-top: 0rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding-left: 12rem;
+    margin-top: 0rem;
+  }
 `
 
 const FooterContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-top: 0rem;
   margin-bottom: -4rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-left: 2rem;
+    margin-top: 0rem;
+    margin-bottom: -4rem;
+  }
 `
 
 const StyledFooter = styled(Footer)`
@@ -345,16 +392,6 @@ const agents = [
     twitter: '#',
     telegram: '#',
     description: "Donald J Trump the only 2 time president in history & next forever  supreme leader of ‘Merica - Trump has revolutionized the Oval Office by installing gold-plated Diet Coke dispensers. Known for scheduling press briefings during his golf rounds and school-yard bullying dictators into conflict resolution. Currently working on grabbing Greenland by the pussy and making Canada the 51st state."
-  },
-  {
-    name: 'Elon Musk',
-    badgeImage: MuskCharacter,
-    wallet: 'MJKqp326RZCHnAAbew9MDdui3iCKWco7fsK9sVuZTX2',
-    twitterHandle: 'realDonald',
-    telegramHandle: 'realDonaldT',
-    twitter: '#',
-    telegram: '#',
-    description: "Elon Musk Co-head of DOGE and self-proclaimed 'Chief Efficiency Merchant,' Musk joined the administration after Trump promised him Mars could be the 51st state. Known for reducing government paperwork by replacing all forms with Twitter polls and converting the entire federal fleet to Cybertrucks. Currently in a heated battle with Baron Trump over who gets to play with the Space Force toys first."
   },
   {
     name:'Agent 2',
