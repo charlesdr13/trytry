@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { QUERIES } from '../constants/breakpoints'
 import { typography } from '../styles/typography'
-import trumpFAQImage from '../assets/images/TrumpFaq.svg'
+import trumpFAQImage from '../assets/images/TrumpFaq.png'
 
 const FAQSection = styled.section`
   width: 100%;
