@@ -25,10 +25,10 @@ const ButtonContainer = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    width: 55rem;  // Larger width for tablet and up
+    width: 48%;  // Larger width for tablet and up
     height: auto;
-    margin-left: 9rem;
-    margin-top: -7.6rem;
+    left: 10%;
+    margin-top: -6rem;
   }
 
   @media ${QUERIES.IP11AndDown} {
@@ -56,13 +56,8 @@ const ButtonText = styled.span`
   text-overflow: ellipsis;
 
   @media ${QUERIES.tabletAndUp} {
-    font-size: 1.5rem;
-    margin-top: -1rem;
-  }
-  
-  @media ${QUERIES.IP11AndDown} {
-    font-size: 0.6rem;
-    top: 25%;
+    font-size: 1.2rem;
+    margin-top: -2%;
   }
 ` 
 

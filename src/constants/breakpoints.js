@@ -1,13 +1,13 @@
 export const BREAKPOINTS = {
-  mobile: '428px',
-  tablet: '900px',
-  desktop: '1024px',
-  IP11: '415px'
+  mobile: '320px',
+  tablet: '601px',
+  desktop: '1025px',
+  largeDesktop: '1281px'
 }
 
 export const QUERIES = {
-  mobileAndUp: `(max-width: ${BREAKPOINTS.mobile})`,
+  mobileAndUp: `(min-width: ${BREAKPOINTS.mobile})`,
   tabletAndUp: `(min-width: ${BREAKPOINTS.tablet})`,
   desktopAndUp: `(min-width: ${BREAKPOINTS.desktop})`,
-  IP11AndDown: `(max-width: ${BREAKPOINTS.IP11})`
+  largeDesktopAndUp: `(min-width: ${BREAKPOINTS.largeDesktop})`
 } 

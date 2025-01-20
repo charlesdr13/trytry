@@ -45,7 +45,7 @@ const Logo = styled(Link)`
 
   @media ${QUERIES.tabletAndUp} {
     margin-left: 2rem;
-    margin-right: 5rem;
+    margin-right: 0rem;
   }
 `
 
@@ -67,7 +67,7 @@ const NavLinks = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     position: relative;
-    gap: 4rem;
+    gap: 2rem;
     flex: 3;
     position: static;
     flex-direction: row;
@@ -77,7 +77,7 @@ const NavLinks = styled.div`
     transform: none;
     align-items: center;
     background: none;
-    margin-left: 0rem;
+    margin-left: 1rem;
   }
 
   @media (max-width: 1200px) {

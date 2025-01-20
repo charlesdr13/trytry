@@ -37,7 +37,7 @@ const Container = styled.div`
   
 
   @media ${QUERIES.tabletAndUp} {
-    max-width: 1200px;
+    max-width: 100%;
     padding: 2rem;
     padding-bottom: 0;
   }
@@ -45,21 +45,18 @@ const Container = styled.div`
 const GradientBackground = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0;  
   width: 100%;
   height: 70%;  // Adjust this value to control how far down the gradient goes
   background: linear-gradient(180deg, #8EEAFF 0%, #FFFFFF 100%);
-  z-index: 0;
+  z-index: 3;
 
   @media ${QUERIES.tabletAndUp} {
     max-width: 100%;
     padding: 2rem;
-    height: 110%;
+    height: 130%;
   }
-  
-  @media ${QUERIES.IP11AndDown} {
-    height: 10;
-  }
+
 `
 
 const Hero = styled.section`
@@ -74,15 +71,15 @@ const Hero = styled.section`
     position: relative;
     -webkit-text-stroke: 0.8px black;
     text-shadow: 
+      0 1px 0 #000,
       0 2px 0 #000,
-      0 3px 0 #000,
-      0 4px 2px rgba(0,0,0,0.3); 
+      0 3px 2px rgba(0,0,0,0.3); 
 
     z-index: 4;
     font-size: 1rem;
     margin-top: -1.66%;
     margin-bottom: -11%;
-    font-weight: 10000;
+    font-weight: 700;
     ${typography.AnonymousPro}
   }
 
@@ -93,9 +90,9 @@ const Hero = styled.section`
     h2 {
       position: relative;
       z-index: 4;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       margin-bottom: -2.5rem;
-      font-weight: 10000;
+      font-weight: 700;
       ${typography.AnonymousPro}
     }
   }
@@ -107,16 +104,16 @@ const CenteredImage = styled.img`
   max-width: 1000px;   // Maximum width of the image
   height: auto;
   margin: 0 auto;      // Centers the image horizontally
-  margin-top: 4rem;
+  margin-top: 3.5rem;
   position: relative;
   z-index: 4;
   
   @media ${QUERIES.tabletAndUp} {
-    width: 70%;        // Adjust for larger screens if needed
+    width: 50%;        // Adjust for larger screens if needed
   }
 
   @media ${QUERIES.desktopAndUp} {
-    width: 80%;        // Adjust for desktop if needed
+    width: 60%;        // Adjust for desktop if needed
   }
 `
 
@@ -139,16 +136,16 @@ const ImageContainerBack = styled.div`
   @media ${QUERIES.tabletAndUp} {
     height: 40rem;
     width: 50rem;
-    margin-left: 7rem;
-    margin-top: -17.8rem;
+    margin-left: 18%;
+    margin-top: -17%;
     margin-bottom: 15rem;
   }
 `
 
 const ImageContainerFront = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%; 
+  width: 75%;
+  height: 75%; 
   background: transparent;
   z-index: 4;
   margin-top: -76.6%;
@@ -162,23 +159,18 @@ const ImageContainerFront = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     margin: 2rem auto;
-    margin-top: -43rem;
+    margin-top: -50%;
     z-index: 4;
   }
 `
 const ImageContainer = styled.div`
+  position: relative;
   width: 100%;
-  height: ${props => props.height || '200px'};
+  height: auto;
   background: transparent;
 
-  img {
-    width: 70%;
-    height: 70%;
-    object-fit: cover;
-  }
-
   @media ${QUERIES.tabletAndUp} {
-    height: ${props => props.height || '200px'};
+    height: auto;
     margin: 2rem auto;
   }
 `
@@ -202,16 +194,12 @@ const ImageContainerRectangle = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: ${props => props.height || '300px'};
-    margin-left: -24.8rem;
-    margin-top: -9rem;
-    width: 138rem;
+    height: 70%;
+    margin-left: -3%;
+    margin-top: -10%;
+    width: 100rem;
     z-index: 5;
   }
-
-  @media ${QUERIES.IP11AndDown} {
-    margin-left: -5vw;
-    
 
 `
 const ImageContainerRectangleLeft = styled.div`
@@ -226,23 +214,17 @@ const ImageContainerRectangleLeft = styled.div`
   z-index: 6;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 55%;
+    height: 55%;
     object-fit: cover;
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: ${props => props.height || '200px'};
-    margin-top: -12rem;
-    margin-left: -21vw;
+    height: 100%  ;
+    margin-top: -8.7rem;
+    margin-left: -2.1%;
     width: 14%;
     z-index: 6;
-  }
-
-  @media ${QUERIES.IP11AndDown} {
-    margin-left: -4vw;
-    width: 13%;
-    margin-top: -6.8vh;
   }
 `
 const ImageContainerRectangleRight = styled.div`
@@ -256,25 +238,19 @@ const ImageContainerRectangleRight = styled.div`
   z-index: 6;
   
   img {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
     object-fit: cover;
   }
 
   @media ${QUERIES.tabletAndUp} {
-    height: ${props => props.height || '200px'};
-    margin-top: -9.1rem;
-    margin-left: 85rem;
-    width: 14.8%;
-    z-index: 6;
-    ${typography.Arimo}
-  }
-  
-  @media ${QUERIES.IP11AndDown} {
-    margin-left: 84vw;
+    height: 100%  ;
+    margin-top: -6.6rem;
+    margin-left: 94%;
     width: 14%;
-    margin-top: -5.2vh;
+    z-index: 6;
   }
+
 `
 
 const ImageContainerCopyBar = styled.div`
@@ -294,7 +270,7 @@ const ImageContainerCopyBar = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     height: ${props => props.height || '200px'};
-    margin-top: -2rem;
+    margin-top: 0rem;
     z-index: 4;
   }
 `
@@ -1551,20 +1527,22 @@ const Home = () => {
             <img src={landingImageFront} alt="Image of Globe" />
           </ImageContainerFront> 
         </Hero>
-        <ImageContainerRectangle height="100%" margin-top="-20rem">
-          <img src={rectangleBG2} alt="Image of Rectangle Background" />
-        </ImageContainerRectangle> 
-        <ImageContainerRectangleLeft height="10%" margin-top="-20rem">
-          <img src={rectangleBG2Left} alt="Image of Rectangle Background" />
-        </ImageContainerRectangleLeft> 
-        <ImageContainerRectangleRight height="10%" margin-top="-20rem">
-          <img src={rectangleBG2Right} alt="Image of Rectangle Background" />
-        </ImageContainerRectangleRight> 
-        <CopyButton 
-          imageSrc={copyButtonImage}
-          textToCopy={tokenomicsConfig.CopyBar.address}
-          tooltipText="Copied to Clipboard!"
-        />
+        <ImageContainer>
+          <ImageContainerRectangle height="100%" margin-top="-20rem">
+            <img src={rectangleBG2} alt="Image of Rectangle Background" />
+          </ImageContainerRectangle> 
+          <ImageContainerRectangleLeft height="10%" margin-top="-20rem">
+            <img src={rectangleBG2Left} alt="Image of Rectangle Background" />
+          </ImageContainerRectangleLeft> 
+          <ImageContainerRectangleRight height="10%" margin-top="-20rem">
+            <img src={rectangleBG2Right} alt="Image of Rectangle Background" />
+          </ImageContainerRectangleRight> 
+          <CopyButton 
+            imageSrc={copyButtonImage}
+            textToCopy={tokenomicsConfig.CopyBar.address}
+            tooltipText="Copied to Clipboard!"
+          />
+        </ImageContainer>
         <MidSection>
             <h2>WHAT IS TERM2?</h2>
             <p>Trump's final term, the greatest term, and the last chance to Make America Great Again.</p>
