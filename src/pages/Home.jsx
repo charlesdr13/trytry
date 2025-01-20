@@ -1461,7 +1461,7 @@ const Home = () => {
     return !sessionStorage.getItem('navigationState');
   });
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 415);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 428);
 
   useEffect(() => {
     if (showLoading) {
