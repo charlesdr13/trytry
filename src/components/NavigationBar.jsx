@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { QUERIES } from '../constants/breakpoints'
 import { typography } from '../styles/typography'
 import term2Logo from '../assets/images/term2Logo.png'
+import tokenomicsConfig from '../config/tokenomics.json'
 
 const Nav = styled.nav`
   width: 100%;
@@ -200,6 +201,14 @@ const NavigationBar = ({ onNavigate }) => {
 
   const handleClick = (path) => {
     setIsMenuOpen(false);
+    
+    // Check if it's an external URL
+    if (path.startsWith('http') || path.startsWith('https')) {
+      window.open(path, '_blank'); // Opens in new tab
+      return;
+    }
+    
+    // Handle internal navigation
     if (path.startsWith('#')) return;
     
     onNavigate(path);
