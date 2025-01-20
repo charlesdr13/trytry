@@ -650,7 +650,7 @@ const FlagDivider = styled.div`
 `
 
 const TokenomicsBackground = styled.div`
-  width: 29.7rem;
+  width: 100%;
   height: 124rem;
   margin-left: -1rem;
   margin-top: -11rem;

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { QUERIES } from '../constants/breakpoints'
 import { typography } from '../styles/typography'
-import getWallet from '../assets/images/getWallet.svg'
-import secureSOL from '../assets/images/secureSol.svg'
-import buyTERM2 from '../assets/images/buyTERM3.svg'
+import getWallet from '../assets/images/getWallet4.png'
+import secureSOL from '../assets/images/secureSol4.png'
+import buyTERM2 from '../assets/images/buyTERM4.png'
 
 const HowToBuySection = styled.section`
   color: #000;
