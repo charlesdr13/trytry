@@ -207,6 +207,7 @@ const ImageContainerRectangle = styled.div`
     width: 138rem;
     z-index: 5;
   }
+
 `
 const ImageContainerRectangleLeft = styled.div`
   width: 12.5%;
@@ -464,7 +465,7 @@ const RedDivider = styled.div`
   }
 
   @media ${QUERIES.IP11AndDown} {
-  margin-top: 8vh;
+  margin-top: 12.4vh;
   }
 `
 const GradientBackground2 = styled.div`
@@ -1481,7 +1482,7 @@ const Home = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 415);
+      setIsMobile(window.innerWidth <= 428);
     };
 
     window.addEventListener('resize', handleResize);
@@ -1511,7 +1512,7 @@ const Home = () => {
           />
           <ImageContainerBack height="100%">
             {isMobile ? (
-              <img src={landingImageBack} style={{width: '100%', height: '100%', marginLeft: '2vw'}} alt="Background" />
+              <img src={landingImageBack} style={{width: '100%', height: '100%', marginLeft: '2vw', marginBottom: '10vw'}} alt="Background" />
             ) : (
               <video autoPlay muted loop playsInline>
                 <source src={globe} type="video/webm" />

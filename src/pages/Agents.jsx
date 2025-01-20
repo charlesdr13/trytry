@@ -53,7 +53,7 @@ const GradientBackground = styled.div`
   background: linear-gradient(180deg, #8EEAFF 0%, #FFFFFF 100%);
   z-index: 0;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletAndUp} { 
     max-width: 100%;
     padding: 2rem;
     height: 130%;
@@ -161,6 +161,10 @@ const TwitterBox = styled.div`
     color: #000;
     margin-bottom: 0.5rem;
     ${typography.AnonymousPro}
+
+    @media ${QUERIES.IP11AndDown} {
+      font-size: 1rem;
+    }
   }
 `
 const TelegramBox = styled.div`
@@ -260,6 +264,10 @@ const AgentCardsSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 8rem;
+
+  @media ${QUERIES.IP11AndDown} {
+    padding: 2rem;
+  }
 `
 
 const AgentCardsGrid = styled.div`
