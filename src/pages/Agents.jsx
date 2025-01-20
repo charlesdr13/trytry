@@ -395,8 +395,8 @@ const agents = [
     name: 'Donald Trump',
     badgeImage: TrumpCharacter,
     wallet: 'MJKqp326RZCHnAAbew9MDdui3iCKWco7fsK9sVuZTX2',
-    twitterHandle: 'realDonald',
-    telegramHandle: 'realDonaldT',
+    twitterHandle: '--',
+    telegramHandle: '--',
     twitter: '#',
     telegram: '#',
     description: "Donald J Trump the only 2 time president in history & next forever  supreme leader of ‘Merica - Trump has revolutionized the Oval Office by installing gold-plated Diet Coke dispensers. Known for scheduling press briefings during his golf rounds and school-yard bullying dictators into conflict resolution. Currently working on grabbing Greenland by the pussy and making Canada the 51st state."

@@ -11,8 +11,8 @@ const StyledButton = styled(Link)`
   border-right: 0.3rem solid #1A10A3;  
   padding: 0.5rem 1.5rem;
   border-radius: 2px;
-  min-width: 15rem;
-  min-height: 6rem;
+  width: 18rem;
+  height: 6rem;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6) !important;
   text-decoration: none;
   display: inline-block;
@@ -24,6 +24,8 @@ const StyledButton = styled(Link)`
   transition: all 0.2s ease;
   position: relative;
   z-index: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
   ${typography.AnonymousPro}
 
   &:hover {
@@ -35,6 +37,12 @@ const StyledButton = styled(Link)`
   &:active {
     transform: translateY(1px);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .agents-button {
+    height: 10rem;
+    width: 20rem;
+    padding: 1rem 2rem;
   }
 `
 

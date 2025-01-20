@@ -55,6 +55,7 @@ const FAQContainer = styled.div`
     margin-left: 0rem;
     left: 0%;
     transform: translateX(0%);
+    margin-bottom: 5rem;
   }
 `
 
@@ -128,11 +129,11 @@ const ImageContainer = styled.div`
     position: relative;
     z-index: 8;
     margin-left: 7rem;
-    margin-top: -2rem;
+    margin-top: 0rem;
     width: 47rem;
     height: auto;
     min-width: 48rem;
-    margin-bottom: 0rem;
+    margin-bottom: -5rem;
 
     img {
       width: 100%;

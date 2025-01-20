@@ -24,8 +24,9 @@ import LoadingScreen from '../components/LoadingScreen';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import globe from '../assets/videos/globe.webm'
-import copyButtonImage from '../assets/images/copyBar.svg'
+import copyButtonImage from '../assets/images/copyBar.png'
 import CopyButton from '../components/CopyButton'
+import tokenomicsConfig from '../config/tokenomics.json'
 
 const Container = styled.div`
   width: 100%;
@@ -207,6 +208,10 @@ const ImageContainerRectangle = styled.div`
     width: 138rem;
     z-index: 5;
   }
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-left: -5vw;
+    
 
 `
 const ImageContainerRectangleLeft = styled.div`
@@ -620,7 +625,10 @@ const ButtonHome = styled(Button)`
   }
 
   @media ${QUERIES.IP11AndDown} {
-  margin-left: 21vw;
+    left: 2%;
+    height: auto;
+    width: auto;
+  }
 }
 `
 
@@ -1061,10 +1069,11 @@ const ButtonToken2 = styled(Button)`
 
   @media ${QUERIES.tabletAndUp} {
       margin-top: -11rem;
-      margin-left: 7rem;
+    left: 24%;
+    transform: translateX(0);
   }
   @media ${QUERIES.IP11AndDown} {
-    margin-left: 21vw;
+    left: -3.5%;
   }
   
 `
@@ -1122,11 +1131,12 @@ const ButtonToken4 = styled(Button)`
 
   @media ${QUERIES.tabletAndUp} {
     margin-top: -11rem;
-    margin-left: 39.5rem;
+    left: 51.5%;
+    transform: translateX(0);
   }
 
   @media ${QUERIES.IP11AndDown} {
-    margin-left: 22vw;
+    left: -1%;
     margin-top: -13.5vh;
   }
 `
@@ -1184,9 +1194,14 @@ const ButtonToken6 = styled(Button)`
 
   @media ${QUERIES.tabletAndUp} {
   margin-top: -11rem;
-  margin-left: 3.5rem;
-    padding: 1.5rem 1rem;
+    left: 25%;
+    transform: translateX(0);
+    padding: auto;
     font-size: 2rem;
+  }
+
+  @media ${QUERIES.IP11AndDown} {
+    left: -1%;
   }
 `
 const ButtonToken7 = styled.div`
@@ -1243,7 +1258,8 @@ const ButtonToken8 = styled(Button)`
 
   @media ${QUERIES.tabletAndUp} {
     margin-top: -11rem;
-    margin-left: 35.5rem;
+    left: 52%;
+    transform: translateX(0);
     padding: 1.5rem 1rem;
     font-size: 2rem;
 
@@ -1251,6 +1267,7 @@ const ButtonToken8 = styled(Button)`
 
   @media ${QUERIES.IP11AndDown} {
     margin-top: -13.5vh;
+    left: -1%;
   }
 `
 const PlaqueBG1 = styled.div`
@@ -1455,6 +1472,17 @@ const ImagePlaceholder = styled.div`
   }
 `
 
+const LandingImage = styled.img`
+  width: 100%;
+  height: 100%;
+  margin-left: 2vw;
+  margin-bottom: 10vw;
+
+  @media ${QUERIES.IP11AndDown} {
+    margin-bottom: 1vw;
+  }
+`
+
 const Home = () => {
   const location = useLocation();
   const [showLoading, setShowLoading] = useState(() => {
@@ -1512,7 +1540,7 @@ const Home = () => {
           />
           <ImageContainerBack height="100%">
             {isMobile ? (
-              <img src={landingImageBack} style={{width: '100%', height: '100%', marginLeft: '2vw', marginBottom: '10vw'}} alt="Background" />
+              <LandingImage src={landingImageBack} />
             ) : (
               <video autoPlay muted loop playsInline>
                 <source src={globe} type="video/webm" />
@@ -1534,7 +1562,7 @@ const Home = () => {
         </ImageContainerRectangleRight> 
         <CopyButton 
           imageSrc={copyButtonImage}
-          textToCopy="http://localhost:5173/"
+          textToCopy={tokenomicsConfig.CopyBar.address}
           tooltipText="Copied to Clipboard!"
         />
         <MidSection>
@@ -1565,7 +1593,7 @@ const Home = () => {
           <p>The biggest AI you've ever seen. Agents - Can you believe that?</p>
           <p style={{lineHeight: '1.2'}}>All 100% oil-filled and American. Full control over the Federal reserve or 'wallets'. They choose where it goes cause who could do a worse job than the that knucklehead Jerome?</p>
           <p style={{lineHeight: '1.2'}}>They might fight inflation, make sex robots, invest in more trump towers, definitely more towers - or even de-sci whatever that is. The point is they are going to make crypto great again!</p>
-          <ButtonHome to="/agents">MEET THE AGENTS</ButtonHome>
+          <ButtonHome to="/agents" className="agents-button">MEET THE AGENTS</ButtonHome>
         </AgentSection>
         <FlagDivider>
           <img src={flagDiv} alt="Image of Flag Divider" />
@@ -1587,22 +1615,30 @@ const Home = () => {
               <img src={plaqueBackground} alt="Image of Plaque Background" />
             </PlaqueBG1>
             <ButtonToken to="/tokenomics">1 BILLION</ButtonToken>
-            <ButtonToken2 to="/tokenomics">BURNED</ButtonToken2>
+            <ButtonToken2 to="/tokenomics">
+              {tokenomicsConfig.buttonTokens.token2}
+            </ButtonToken2>
             <PlaqueBG2>
               <img src={plaqueBackground} alt="Image of Plaque Background" />
             </PlaqueBG2>
             <ButtonToken3 to="/tokenomics">20 MILLION (2%) X8</ButtonToken3>
-            <ButtonToken4 to="/tokenomics">VIEW NOW</ButtonToken4>
+            <ButtonToken4 to="/tokenomics">
+              {tokenomicsConfig.buttonTokens.token4}
+            </ButtonToken4>
             <PlaqueBG3>
               <img src={plaqueBackground} alt="Image of Plaque Background" />
             </PlaqueBG3>
             <ButtonToken5 to="/tokenomics">100 MILLION (10%)</ButtonToken5>
-            <ButtonToken6 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken6>
+            <ButtonToken6 to="/tokenomics">
+            {tokenomicsConfig.buttonTokens.token6}
+            </ButtonToken6>
             <PlaqueBG4>
               <img src={plaqueBackground} alt="Image of Plaque Background" />
             </PlaqueBG4>
             <ButtonToken7 to="/tokenomics">100 MILLION (10%)</ButtonToken7>
-            <ButtonToken8 to="/tokenomics">0XXXXXXXXXXXXXXXXXX</ButtonToken8>
+            <ButtonToken8 to="/tokenomics">
+            {tokenomicsConfig.buttonTokens.token8}
+            </ButtonToken8>
           </TokenomicsSection>
         <BlueDivider>
           <img src={blueDivider} alt="Image of Blue Divider" />

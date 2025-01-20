@@ -218,10 +218,10 @@ const NavigationBar = ({ onNavigate }) => {
       </MenuButton>
       <NavLinks isOpen={isMenuOpen}>
         <NavLink onClick={() => handleClick('/agents')}>THE AGENTS</NavLink>
-        <NavLink onClick={() => handleClick('#')}>TWITTER</NavLink>
-        <NavLink onClick={() => handleClick('#')}>TELEGRAM</NavLink>
-        <NavLink onClick={() => handleClick('#')}>DEXSCREENER</NavLink>
-        <NavLink onClick={() => handleClick('#')}>DEXTOOLS</NavLink>
+        <NavLink onClick={() => handleClick(tokenomicsConfig.LiveSites.twitter)}>TWITTER</NavLink>
+        <NavLink onClick={() => handleClick(tokenomicsConfig.LiveSites.telegram)}>TELEGRAM</NavLink>
+        <NavLink onClick={() => handleClick(tokenomicsConfig.LiveSites.Dexscreener)}>DEXSCREENER</NavLink>
+        <NavLink onClick={() => handleClick(tokenomicsConfig.LiveSites.DexTools)}>DEXTOOLS</NavLink>
         <BuyButton onClick={() => handleClick('#')}>BUY NOW</BuyButton>
       </NavLinks>
     </Nav>

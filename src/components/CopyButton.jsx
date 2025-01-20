@@ -11,6 +11,9 @@ const ButtonContainer = styled.div`
   height: auto;
   margin-left: 5rem;
   margin-top: -2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
 
   &:hover {
@@ -38,6 +41,30 @@ const ButtonImage = styled.img`
   height: 100%;
   object-fit: contain;
 `
+
+const ButtonText = styled.span`
+  position: absolute;
+  color: #F20505;
+  font-size: 1.2rem;
+  font-weight: bold;
+  ${typography.AnonymousPro}
+  z-index: 6;
+  left: 18%;
+  text-align: center;
+  pointer-events: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 1.5rem;
+    margin-top: -1rem;
+  }
+  
+  @media ${QUERIES.IP11AndDown} {
+    font-size: 0.6rem;
+    top: 25%;
+  }
+` 
 
 const Tooltip = styled.div`
   position: absolute;
@@ -78,6 +105,7 @@ const CopyButton = ({
       onClick={handleClick}
     >
       <ButtonImage src={imageSrc} alt="Copy button" />
+      <ButtonText>{textToCopy}</ButtonText>
       <Tooltip visible={showTooltip}>{tooltipText}</Tooltip>
     </ButtonContainer>
   )

@@ -96,8 +96,9 @@ const AgentName = styled(Button)`
 
   @media ${QUERIES.tabletAndUp} {
     margin-top: 0rem;
-    margin-left: 9.3rem;
-    bottom: ${props => props.isComingSoon ? '4rem' : '-0.1rem'};
+    margin-left: 7.75rem;
+    height: 5rem;
+    bottom: ${props => props.isComingSoon ? '4rem' : '-1rem'};
   }
 `
 
@@ -254,8 +255,8 @@ const CapabilitiesGrid = styled.div`
 
 const StatusBadge = styled.span`
   background: ${props => {
-    if (props.isComingSoon) return '#BF183B';
-    return props.status === 'live' ? '#12BD09' : '#666';
+    if (props.isComingSoon) return '#BF183B'; // change to #BF183B //
+    return props.status === 'live' ? '#666' : '#666'; //change to live //
   }};
   color: white;
   padding: 0.5rem 0.8rem;
@@ -323,13 +324,13 @@ const AgentCard = ({ agent }) => {
             <div>
               <span>Twitter</span>
               <StatusBadge status="live" isComingSoon={isComingSoon(agent.name)}>
-                {isComingSoon(agent.name) ? 'offline' : 'live'}
+                {isComingSoon(agent.name) ? 'offline' : 'coming soon'}
               </StatusBadge>
             </div>
             <div>
               <span>Telegram</span>
               <StatusBadge status="live" isComingSoon={isComingSoon(agent.name)}>
-                {isComingSoon(agent.name) ? 'offline' : 'live'}
+                {isComingSoon(agent.name) ? 'offline' : 'coming soon'}
               </StatusBadge>
             </div>
             <div>
